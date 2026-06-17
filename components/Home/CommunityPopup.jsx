@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageSquare, ArrowRight } from "lucide-react";
 import { QRCodeSVG } from "qrcode.react";
+import Image from "next/image";
 
 const COMMUNITY_URL = process.env.NEXT_PUBLIC_WHATSAPP_CHANNEL_URL || "https://whatsapp.com/channel/0029Vb7jVuaLtOj7Q889qV1k";
 const STORAGE_KEY = "community_popup_dismissed_v9";
@@ -43,8 +44,12 @@ export default function CommunityPopup() {
             initial={{ scale: 0.95, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.95, opacity: 0, y: 20 }}
-            className="relative w-full max-w-[250px] bg-[var(--card)] border border-[var(--white)]/10 rounded-[2.5rem] overflow-hidden shadow-2xl"
+            className="relative w-full max-w-[280px] bg-[var(--card)] border-[4px] border-[var(--foreground)] rounded-[2.5rem] shadow-[0_10px_0_var(--foreground)] mt-12"
           >
+            {/* Peeking Pompompurin */}
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 z-10 pointer-events-none">
+              <Image src="/pompom_gaming.png" alt="Pompompurin" width={110} height={110} className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)]" />
+            </div>
             <div className="p-5 flex flex-col items-center gap-4">
               {/* Header Section */}
               <div className="flex flex-col items-center gap-1">
@@ -62,24 +67,24 @@ export default function CommunityPopup() {
               </div>
 
               {/* QR Code */}
-              <div className="p-2.5 bg-white rounded-3xl shadow-xl">
+              <div className="p-3 bg-white rounded-3xl border-[3px] border-[var(--foreground)] shadow-[0_4px_0_var(--foreground)]">
                 <QRCodeSVG
                   value={COMMUNITY_URL}
-                  size={125}
+                  size={135}
                   level="M"
                 />
               </div>
 
               {/* Action Buttons */}
-              <div className="w-full flex flex-col items-center space-y-2.5">
+              <div className="w-full flex flex-col items-center space-y-3">
                 <a
                   href={COMMUNITY_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-4/5 py-2.5 rounded-xl bg-[var(--accent)] flex items-center justify-center gap-2 shadow-lg shadow-[var(--accent)]/20 hover:brightness-110 active:scale-[0.98] transition-all"
+                  className="w-[85%] py-3 rounded-2xl bg-[var(--accent)] border-[3px] border-[var(--foreground)] shadow-[0_4px_0_var(--foreground)] flex items-center justify-center gap-2 hover:brightness-110 active:scale-[0.98] transition-all"
                 >
-                  <span className="text-black font-black uppercase tracking-[0.1em] italic text-[11px]">Join Now</span>
-                  <ArrowRight size={12} className="text-black" />
+                  <span className="text-[var(--foreground)] font-black uppercase tracking-[0.1em] italic text-[11px]">Join Now</span>
+                  <ArrowRight size={14} strokeWidth={3} className="text-[var(--foreground)]" />
                 </a>
 
                 <button
