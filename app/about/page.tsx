@@ -2,7 +2,7 @@ const BRAND = process.env.NEXT_PUBLIC_BRAND_NAME || "Meow Ji";
 
 export const metadata = {
   title: `About | ${BRAND}`,
-  description: `Learn about ${BRAND}, a simple and safe game top-up platform with fast delivery.`,
+  description: `Learn about ${BRAND}, an easy and safe game top-up site with fast delivery.`,
 };
 
 export default function AboutPage() {
@@ -20,8 +20,7 @@ export default function AboutPage() {
         </h1>
 
         <p className="text-[var(--muted)] text-lg max-w-2xl mx-auto">
-          A simple place for fast game top-ups, safe payments, and
-          auto delivery anytime.
+          A simple place for fast game top-ups and safe payments.
         </p>
       </section>
 
@@ -32,16 +31,16 @@ export default function AboutPage() {
         </h2>
 
         <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl mx-auto mb-8">
-          {BRAND} was built to make in-game purchases simple, fast, and reliable.
-          We saw that players needed a service that adds game currency fast,
-          without extra steps or risky third-party handling.
+          We built {BRAND} to make game top-ups easy, fast, and safe.
+          We know gamers want to get their game money quickly,
+          without hard steps or risks.
         </p>
 
         <p className="text-[var(--muted)] text-lg leading-relaxed max-w-3xl mx-auto">
-          🔹 Instant top-ups for popular games  
-          🔹 Safe payment methods  
-          🔹 Auto delivery with live order updates  
-          🔹 Transparent pricing with no hidden fees  
+          🔹 Fast top-ups for popular games  
+          🔹 Safe ways to pay  
+          🔹 Fast delivery with order updates  
+          🔹 Clear prices with no extra fees  
         </p>
       </section>
 
@@ -54,18 +53,18 @@ export default function AboutPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
             {
-              title: "Instant Delivery",
-              desc: "We process orders automatically and deliver quickly after payment is confirmed.",
+              title: "Fast Delivery",
+              desc: "We process orders and send them quickly after you pay.",
               icon: "⚡",
             },
             {
-              title: "Safe & Secure",
-              desc: "We use trusted payment gateways and secure APIs to protect your payments.",
+              title: "Safe Payments",
+              desc: "We use safe systems to protect your money.",
               icon: "🔐",
             },
             {
-              title: "Affordable Pricing",
-              desc: "Fair prices, regular offers, and no hidden charges.",
+              title: "Good Prices",
+              desc: "Fair prices with no hidden charges.",
               icon: "💰",
             },
           ].map((val, i) => (
@@ -97,8 +96,8 @@ export default function AboutPage() {
         </h2>
 
         <p className="text-[var(--muted)] mb-8 max-w-2xl mx-auto text-lg">
-          We have delivered thousands of successful top-ups.
-          Follow us for offers, updates, and new game releases.
+          We have completed thousands of orders.
+          Follow us for offers and updates.
         </p>
 
         <a

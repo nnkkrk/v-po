@@ -12,8 +12,8 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="text-[var(--muted)] leading-relaxed text-lg">
-            Have a question or suggestion?
-            Contact us by email or social media.
+            Have a question or need help?
+            Talk to us by email or social media.
           </p>
 
           {/* ✉️ Email Highlight Box */}
@@ -38,20 +38,8 @@ export default function ContactPage() {
             >
               <FaInstagram size={24} />
             </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              className="p-3 rounded-full bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--accent)] hover:text-white transition-all"
-            >
-              <FaTwitter size={24} />
-            </a>
-            <a
-              href="https://discord.gg"
-              target="_blank"
-              className="p-3 rounded-full bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--accent)] hover:text-white transition-all"
-            >
-              <FaDiscord size={24} />
-            </a>
+        
+          
             <a
               href="mailto:zynx.anime@gmail.com"
               className="p-3 rounded-full bg-[var(--card)] border border-[var(--border)] hover:bg-[var(--accent)] hover:text-white transition-all"

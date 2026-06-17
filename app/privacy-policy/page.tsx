@@ -15,93 +15,80 @@ export default function PrivacyPolicy() {
         </p>
 
         <p className="mb-6 leading-relaxed">
-          At <strong>{BRAND}</strong>, we respect your privacy and are committed to
-          protecting your personal information. This Privacy Policy explains how
-          we collect, use, and safeguard your data when you use our website to
-          purchase game top-ups, browse services, or interact with our platform.
+          At <strong>{BRAND}</strong>, we care about your privacy. This page explains how
+          we collect and use your data when you use our website.
         </p>
 
         {/* 1 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          1. Information We Collect
+          1. What We Collect
         </h2>
         <p className="mb-6 leading-relaxed">
-          We may collect the following types of information:
+          We may collect:
           <br /><br />
-          <strong>• Account & Order Information</strong> — such as email address,
-          phone number, game ID, server/zone details, and order history required
-          to process top-ups.
+          <strong>• Your Details</strong> — like email, phone number, game ID, and your past orders.
           <br /><br />
-          <strong>• Payment Information</strong> — payments are handled securely
-          through third-party payment gateways. We do not store sensitive payment
-          details such as card numbers or UPI credentials.
+          <strong>• Payment Info</strong> — payments go through safe third-party tools. We do not save your card or UPI details.
           <br /><br />
-          <strong>• Technical & Usage Data</strong> — including IP address,
-          browser type, device information, pages visited, and timestamps for
-          security, analytics, and fraud prevention.
+          <strong>• Website Usage</strong> — like IP address and pages you visit, to keep our site safe and working well.
         </p>
 
         {/* 2 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          2. How We Use Your Information
+          2. How We Use Your Data
         </h2>
         <p className="mb-6 leading-relaxed">
-          Your data is used to:
+          We use your data to:
           <br /><br />
-          • Process and deliver game top-ups accurately  
+          • Send game top-ups to your account  
           <br />
-          • Verify transactions and prevent fraud or misuse  
+          • Keep our platform safe from scams  
           <br />
-          • Provide customer support and order assistance  
+          • Help you with your orders  
           <br />
-          • Improve platform performance, reliability, and user experience  
+          • Make our website better  
           <br /><br />
-          We do <strong>not</strong> sell, rent, or trade your personal information
-          to third parties for marketing purposes.
+          We do <strong>not</strong> sell your details to others.
         </p>
 
         {/* 3 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          3. Cookies & Tracking
+          3. Cookies
         </h2>
         <p className="mb-6 leading-relaxed">
-          {BRAND} uses cookies and similar technologies to:
+          We use cookies to:
           <br /><br />
-          • Remember user preferences  
+          • Remember your choices  
           <br />
-          • Maintain login sessions  
+          • Keep you logged in  
           <br />
-          • Analyze traffic and platform usage  
+          • See how many people visit our site  
           <br /><br />
-          You may disable cookies via your browser settings, but certain features
-          of the website may not function properly.
+          You can turn off cookies in your browser, but some parts of the site might not work well.
         </p>
 
         {/* 4 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          4. Third-Party Services
+          4. Third-Party Tools
         </h2>
         <p className="mb-6 leading-relaxed">
-          We may use trusted third-party services for:
+          We use safe third-party tools for:
           <br /><br />
-          • Payment processing  
+          • Taking payments  
           <br />
-          • Analytics and performance monitoring  
+          • Checking website speed  
           <br />
-          • Hosting and content delivery  
+          • Hosting our site  
           <br /><br />
-          These providers operate under their own privacy policies. We recommend
-          reviewing them for additional information on how your data is handled.
+          These tools have their own privacy rules.
         </p>
 
         {/* 5 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          5. Data Security
+          5. Data Safety
         </h2>
         <p className="mb-6 leading-relaxed">
-          We implement appropriate technical and organizational measures to
-          protect your data against unauthorized access, alteration, or loss.
-          However, no online platform can guarantee 100% security.
+          We work hard to protect your data, but no online site is 100% safe.
         </p>
 
         {/* 6 */}
@@ -109,15 +96,15 @@ export default function PrivacyPolicy() {
           6. Your Rights
         </h2>
         <p className="mb-6 leading-relaxed">
-          You have the right to:
+          You can ask us to:
           <br /><br />
-          • Request access to your personal data  
+          • Show you the data we have about you  
           <br />
-          • Request correction of inaccurate information  
+          • Fix wrong details  
           <br />
-          • Request deletion of your data (subject to legal and transactional requirements)  
+          • Delete your data  
           <br /><br />
-          To exercise these rights, please contact us via our{" "}
+          To ask for this, go to our{" "}
           <a href="/contact" className="text-[var(--accent)] hover:underline">
             Contact Page
           </a>.
@@ -128,14 +115,11 @@ export default function PrivacyPolicy() {
           7. Policy Updates
         </h2>
         <p className="mb-6 leading-relaxed">
-          We may update this Privacy Policy periodically to reflect changes in
-          our services, technology, or legal requirements. Any updates will be
-          posted on this page with a revised “Last updated” date.
+          We might change this policy from time to time. We will update the date at the top when we do.
         </p>
 
         <p className="leading-relaxed">
-          If you have any questions or concerns regarding this Privacy Policy,
-          please contact{" "}
+          If you have questions, please talk to{" "}
           <a href="/contact" className="text-[var(--accent)] hover:underline">
             {BRAND} Support
           </a>.

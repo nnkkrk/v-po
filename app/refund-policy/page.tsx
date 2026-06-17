@@ -16,74 +16,73 @@ export default function RefundPolicy() {
 
                 <p className="mb-6 leading-relaxed">
                     At <strong>{BRAND}</strong>, we try to make top-ups simple and reliable.
-                    Please read this policy before buying, so you know when refunds are possible.
+                    Please read this policy before buying, so you know when you can get a refund.
                 </p>
 
                 {/* 1 */}
                 <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-                    1. Digital Nature of Service
+                    1. Digital Goods
                 </h2>
                 <p className="mb-6 leading-relaxed">
-                    Because game top-ups are digital, most sales are final.
-                    Once a top-up is delivered to the Game ID you entered, it cannot be reversed and no refund will be issued.
+                    Because game top-ups are digital, all sales are final.
+                    Once a top-up is sent to your Game ID, we cannot take it back or refund your money.
                 </p>
 
                 {/* 2 */}
                 <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-                    2. Non-Refundable Scenarios
+                    2. No Refunds For
                 </h2>
                 <p className="mb-6 leading-relaxed">
-                    Refunds will <strong>not</strong> be provided in the following circumstances:
+                    We will <strong>not</strong> give a refund if:
                     <br /><br />
-                    • <strong>Incorrect Information:</strong> If you enter the wrong Game ID, Server, or Zone ID and the top-up is processed.
+                    • <strong>Wrong Details:</strong> You gave us the wrong Game ID or Server and we already sent the top-up.
                     <br />
-                    • <strong>Change of Mind:</strong> If you no longer want the virtual currency after the order starts.
+                    • <strong>Changed Mind:</strong> You decide you don't want the game money after you paid.
                     <br />
-                    • <strong>Account Issues:</strong> If your game account is banned, restricted, or suspended for reasons not related to our service.
+                    • <strong>Account Problems:</strong> Your game account gets banned for reasons not related to us.
                     <br />
-                    • <strong>Used Services:</strong> If the virtual currency has already been added to and used in your game account.
+                    • <strong>Used Items:</strong> You already used the game money.
                 </p>
 
                 {/* 3 */}
                 <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-                    3. Eligible Refund Scenarios
+                    3. When You Can Get a Refund
                 </h2>
                 <p className="mb-6 leading-relaxed">
-                    You may be eligible for a refund or credit under the following conditions:
+                    You can ask for a refund if:
                     <br /><br />
-                    • <strong>Failed Delivery:</strong> If payment succeeds but the top-up is not delivered because of a technical issue on our side.
+                    • <strong>System Error:</strong> You paid but the top-up was not sent due to a problem on our side.
                     <br />
-                    • <strong>Duplicate Charges:</strong> If you are charged twice for the same order.
+                    • <strong>Double Charge:</strong> You were charged two times for one order.
                     <br />
-                    • <strong>Service Unavailable:</strong> If the service you bought becomes unavailable after payment and before delivery.
+                    • <strong>Out of Stock:</strong> The service you bought is not available after you paid.
                 </p>
 
                 {/* 4 */}
                 <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-                    4. Refund Process
+                    4. How to Get a Refund
                 </h2>
                 <p className="mb-6 leading-relaxed">
-                    To request a refund, please follow these steps:
+                    To ask for a refund:
                     <br /><br />
-                    1. Contact our support team via the <a href="/contact" className="text-[var(--accent)] hover:underline">Contact Page</a> within 24 hours of the transaction.
-                    2. Share your Order ID, Transaction ID, and a clear reason for the refund request.
-                    3. Attach any relevant screenshots or proof of payment.
+                    1. Talk to our support team on the <a href="/contact" className="text-[var(--accent)] hover:underline">Contact Page</a> within 24 hours of your order.
+                    2. Give us your Order ID and tell us why you need a refund.
+                    3. Add a picture of your payment receipt.
                     <br /><br />
-                    Our team reviews refund requests manually. If approved, we send the refund to your original payment method or {BRAND} wallet credit within 5-7 business days.
+                    We will check your request. If approved, we will send your money back in 5-7 days.
                 </p>
 
                 {/* 5 */}
                 <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-                    5. Chargebacks
+                    5. Bank Disputes
                 </h2>
                 <p className="mb-6 leading-relaxed">
-                    Starting a chargeback or payment dispute before contacting support may result
-                    in permanent suspension of your {BRAND} account and reporting your Game ID to the
-                    related game developers.
+                    If you dispute a payment with your bank without talking to us first,
+                    we may block your {BRAND} account and report your Game ID to the game makers.
                 </p>
 
                 <p className="leading-relaxed mt-10">
-                    If you have questions or need help with an order, please contact{" "}
+                    If you need help, please contact{" "}
                     <a href="/contact" className="text-[var(--accent)] hover:underline">
                         {BRAND} Support
                     </a>.

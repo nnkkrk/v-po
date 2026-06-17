@@ -16,22 +16,20 @@ export default function TermsAndConditions() {
         </p>
 
         <p className="mb-6 leading-relaxed">
-          Welcome to <strong>{BRAND}</strong>. By accessing or using our website,
-          placing an order, or using our services, you agree to these Terms &
-          Conditions. If you do not agree, please do not use our
-          platform.
+          Welcome to <strong>{BRAND}</strong>. By using our website or
+          buying from us, you agree to these rules. If you do not agree,
+          please do not use our site.
         </p>
 
         {/* 1 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          1. Use of the Platform
+          1. Using Our Site
         </h2>
         <p className="mb-6 leading-relaxed">
-          You agree to use {BRAND} only for legal purposes and follow these Terms.
+          You agree to use {BRAND} only for legal reasons.
           <br /><br />
-          You must make sure all details you enter at checkout - such as
-          game ID, server/zone, and contact details — is accurate. Incorrect
-          details may cause failed top-ups that cannot be reversed.
+          You must give correct details when you buy, like your
+          game ID and server. If you give wrong details, your top-up might fail, and we cannot fix it.
         </p>
 
         {/* 2 */}
@@ -39,15 +37,14 @@ export default function TermsAndConditions() {
           2. Orders & Top-Ups
         </h2>
         <p className="mb-6 leading-relaxed">
-          • All top-up orders are processed automatically or with manual review.  
+          • All orders are done automatically or checked by us.  
           <br />
-          • Once an order is successfully delivered, it is considered final.  
+          • Once a top-up is sent, the sale is final.  
           <br />
-          • We are not responsible for loss caused by incorrect details
-          (wrong game ID, server, or account).
+          • We are not responsible if you type the wrong game ID or server.
           <br /><br />
-          By placing an order, you confirm that you own the account or have
-          permission to top up that account.
+          When you buy, you promise that you own the game account or have
+          permission to use it.
         </p>
 
         {/* 3 */}
@@ -55,81 +52,71 @@ export default function TermsAndConditions() {
           3. Payments
         </h2>
         <p className="mb-6 leading-relaxed">
-          Payments are processed through trusted third-party payment gateways.
-          {BRAND} does not store sensitive payment details such as card
-          details or UPI credentials.
+          Payments go through safe third-party tools.
+          {BRAND} does not save your card details or UPI PIN.
           <br /><br />
-          Orders may be delayed or canceled because of payment failure,
-          suspected fraud, or system issues.
+          Orders might be delayed or cancelled if payment fails or if we spot a scam.
         </p>
 
         {/* 4 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          4. Refunds & Cancellations
+          4. Refunds
         </h2>
         <p className="mb-6 leading-relaxed">
-          Due to the digital and instant nature of game top-ups:
+          Because game top-ups are sent instantly:
           <br /><br />
-          • Successfully delivered top-ups are <strong>non-refundable</strong>.  
+          • Completed top-ups are <strong>not refundable</strong>.  
           <br />
-          • Refunds may be considered only if the order fails and the balance is
-          not credited to the game account.
-          <br /><br />
-          Refund decisions are made by {BRAND} after review.
+          • We only give refunds if your order fails and the game money is not added to your account.
         </p>
 
         {/* 5 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          5. Prohibited Activities
+          5. Things You Cannot Do
         </h2>
         <p className="mb-6 leading-relaxed">
           You must not:
           <br /><br />
-          • Attempt to exploit pricing, system bugs, or promotions  
+          • Try to cheat our prices or use bugs  
           <br />
-          • Use the platform for fraudulent or unauthorized transactions  
+          • Use stolen credit cards  
           <br />
-          • Try to break platform security or automated systems  
+          • Hack or attack our website  
           <br />
-          • Resell services without written permission (unless explicitly allowed)
+          • Sell our services to others without our permission
         </p>
 
         {/* 6 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          6. Third-Party Games & Trademarks
+          6. Game Names & Logos
         </h2>
         <p className="mb-6 leading-relaxed">
-          {BRAND} is an independent platform and is <strong>not affiliated with,
-          endorsed by, or sponsored by</strong> any game publisher.
+          {BRAND} is an independent website. We are <strong>not partnered with</strong> any game creators.
           <br /><br />
-          All game names, logos, and trademarks belong to their owners.
+          All game names and logos belong to their real owners.
         </p>
 
         {/* 7 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          7. Limitation of Liability
+          7. Our Limits
         </h2>
         <p className="mb-6 leading-relaxed">
           {BRAND} is not responsible for:
           <br /><br />
-          • Loss caused by incorrect user information  
+          • Money lost because you typed wrong details  
           <br />
-          • Delays due to maintenance, API downtime, or external providers  
+          • Delays caused by the game server or internet issues  
           <br />
-          • Game account bans or actions taken by game publishers  
-          <br />
-          • Indirect damages
+          • Your game account getting banned  
         </p>
 
         {/* 8 */}
         <h2 className="text-2xl font-semibold text-[var(--accent)] mb-3">
-          8. Changes to Terms
+          8. Changes to These Rules
         </h2>
         <p className="leading-relaxed">
-          {BRAND} may update these Terms & Conditions at any time.
-          Changes take effect when posted on this page.
-          If you continue using the platform, you accept the updated
-          terms.
+          {BRAND} can change these rules at any time.
+          We will post the new rules here. If you keep using our site, you agree to the new rules.
         </p>
       </div>
     </main>
