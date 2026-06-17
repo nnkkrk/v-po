@@ -8,6 +8,7 @@ import { FiUser, FiHash, FiSearch, FiArrowLeft, FiCheck, FiHelpCircle } from "re
 import AuthGuard from "../../../../../components/AuthGuard";
 import Skeleton from "@/components/Skeleton";
 import logo from "@/public/logo.png";
+import pompomGaming from "@/public/pompom_gaming.png";
 import { saveVerifiedPlayer } from "@/utils/storage/verifiedPlayerStorage";
 import RecentVerifiedPlayers from "../../../../region/RecentVerifiedPlayers";
 import ReviewAndPaymentStep from "./ReviewAndPaymentStep";
@@ -319,12 +320,22 @@ export default function BuyFlowPage() {
               <div className="lg:col-span-7 space-y-4">
 
                 {/* SECTION 1: PLAYER INFO */}
-                <div className="bg-[var(--card)] rounded-3xl p-6 border border-[var(--border)] shadow-xl space-y-5">
-                  <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-2.5">
-                      <span className="text-xl font-black italic text-[var(--accent)] drop-shadow-[0_0_8px_var(--accent-glow)]">| 1.</span>
-                      <h2 className="text-xl font-black italic tracking-tight uppercase text-[var(--foreground)]">Player Info</h2>
-                    </div>
+                <div className="relative mt-6 md:mt-8">
+                  {/* Peeking Image */}
+                  <div className="absolute -top-[60px] right-2 md:-top-[80px] md:right-6 z-10 w-[90px] h-[90px] md:w-[120px] md:h-[120px] pointer-events-none drop-shadow-xl">
+                    <Image
+                      src={pompomGaming}
+                      alt="Pompompurin Gaming"
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <div className="relative z-20 bg-[var(--background)] border-[3px] border-[var(--foreground)] rounded-2xl p-4 shadow-[0_4px_0_var(--foreground)] space-y-3">
+                    <div className="flex items-center justify-between">
+                      <div className="flex items-center gap-2.5">
+                        <span className="text-xl font-black text-[var(--accent)] drop-shadow-[1px_1px_0_var(--foreground)]">1.</span>
+                        <h2 className="text-lg font-black uppercase tracking-tight text-[var(--foreground)]">Player Info</h2>
+                      </div>
                     <button className="w-8 h-8 rounded-full bg-[var(--accent)] text-black flex items-center justify-center shadow-lg shadow-[var(--accent)]/30 hover:scale-110 transition-transform">
                       <FiHelpCircle size={16} />
                     </button>
@@ -426,12 +437,13 @@ export default function BuyFlowPage() {
                     )}
                   </div>
                 </div>
+                </div>
 
                 {/* SECTION 2: PAYMENT */}
-                <div className={`bg-[var(--card)] rounded-3xl p-6 border border-[var(--border)] shadow-xl space-y-5 transition-all duration-500 ${!reviewData ? "opacity-40 grayscale pointer-events-none" : ""}`}>
+                <div className={`bg-[var(--background)] border-[3px] border-[var(--foreground)] rounded-2xl p-4 shadow-[0_4px_0_var(--foreground)] space-y-3 transition-all duration-500 ${!reviewData ? "opacity-40 grayscale pointer-events-none" : ""}`}>
                   <div className="flex items-center gap-2.5">
-                    <span className="text-xl font-black italic text-[var(--accent)] drop-shadow-[0_0_8px_var(--accent-glow)]">| 2.</span>
-                    <h2 className="text-xl font-black italic tracking-tight uppercase text-[var(--foreground)]">Payment</h2>
+                    <span className="text-xl font-black text-[var(--accent)] drop-shadow-[1px_1px_0_var(--foreground)]">2.</span>
+                    <h2 className="text-lg font-black uppercase tracking-tight text-[var(--foreground)]">Payment</h2>
                   </div>
 
                   <ReviewAndPaymentStep

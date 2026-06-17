@@ -48,11 +48,11 @@ export default function ItemGrid({
             }}
             className={`
               relative overflow-hidden group
-              rounded-2xl border transition-all duration-500
+              rounded-2xl transition-all duration-300
               flex items-center gap-3 min-h-[82px] p-3 cursor-pointer
               ${isSelected
-                ? "border-[var(--accent)] bg-[var(--accent)]/[0.08] shadow-lg shadow-[var(--accent)]/5"
-                : "border-[var(--border)] bg-white/[0.02] hover:border-[var(--accent)]/30 hover:bg-white/[0.04]"
+                ? "border-[3px] border-[var(--foreground)] bg-[var(--background)] shadow-[0_6px_0_var(--foreground)] translate-y-[-2px]"
+                : "border-2 border-[var(--foreground)]/20 bg-[var(--card)] hover:border-[var(--foreground)]/50 hover:shadow-[0_4px_0_var(--foreground)] hover:translate-y-[-2px]"
               }
             `}
           >
@@ -61,9 +61,9 @@ export default function ItemGrid({
               <motion.div
                 initial={{ scale: 0, rotate: -20 }}
                 animate={{ scale: 1, rotate: 0 }}
-                className="absolute top-1.5 right-1.5 z-20 w-4.5 h-4.5 bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/20"
+                className="absolute top-2 right-2 z-20 w-5 h-5 bg-[var(--accent)] border-2 border-[var(--foreground)] text-[var(--foreground)] rounded-full flex items-center justify-center shadow-[2px_2px_0_var(--foreground)]"
               >
-                <FiCheck size={11} strokeWidth={4} />
+                <FiCheck size={12} strokeWidth={4} />
               </motion.div>
             )}
 
@@ -85,31 +85,25 @@ export default function ItemGrid({
             {/* Header: Name & Price */}
             <div className="relative z-10 flex flex-col flex-1 h-full justify-between overflow-hidden">
               <div className="flex flex-col">
-                <p className={`font-black text-[11px] uppercase tracking-tight transition-colors duration-300 truncate ${isSelected ? 'text-[var(--accent)]' : 'text-[var(--muted)]'}`}>
+                <p className={`font-black text-[12px] uppercase tracking-tight transition-colors duration-300 line-clamp-2 leading-tight ${isSelected ? 'text-[var(--foreground)]' : 'text-[var(--foreground)]/70'}`}>
                   {item.itemName}
                 </p>
                 {discount > 0 && (
-                  <span className="text-[8px] font-black text-emerald-400 uppercase tracking-tighter opacity-80">
+                  <span className="text-[9px] font-black text-emerald-500 uppercase tracking-tighter mt-0.5">
                     SAVE {discount}%
                   </span>
                 )}
               </div>
 
               <div className="mt-1 flex items-baseline gap-1">
-                <span className={`text-[9px] font-bold ${isSelected ? 'text-[var(--accent)]' : 'text-[var(--muted)]'} opacity-50`}>₹</span>
-                <p className={`text-base font-black tracking-tighter transition-all duration-300 ${isSelected ? 'text-[var(--foreground)] scale-105 origin-left' : 'text-[var(--muted)]'}`}>
+                <span className={`text-[10px] font-bold ${isSelected ? 'text-[var(--foreground)]' : 'text-[var(--foreground)]/50'}`}>₹</span>
+                <p className={`text-lg font-black tracking-tighter transition-all duration-300 ${isSelected ? 'text-[var(--foreground)] scale-105 origin-left' : 'text-[var(--foreground)]/80'}`}>
                   {item.sellingPrice}
                 </p>
               </div>
             </div>
 
-            {/* Selection Background Glow */}
-            {isSelected && (
-              <motion.div
-                layoutId="active-card-glow"
-                className="absolute inset-0 bg-gradient-to-br from-[var(--accent)]/5 to-transparent pointer-events-none"
-              />
-            )}
+
           </motion.div>
         );
       })}

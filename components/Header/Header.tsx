@@ -311,9 +311,9 @@ export default function Header() {
                           </Link>
                         </div>
                       ) : (
-                        <div className="space-y-4">
+                        <div className="space-y-2">
                           {/* User Profile Header horizontal - COMPACT */}
-                          <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)] relative">
+                          <div className="flex items-center gap-3 pb-2 border-b border-[var(--border)] relative">
                             {/* Left: Avatar */}
                             <div className="w-10 h-10 rounded-lg bg-[var(--accent)] p-[1.5px] shadow-lg shrink-0">
                               <div className="w-full h-full rounded-[0.7rem] overflow-hidden bg-[var(--card)]">
@@ -370,7 +370,7 @@ export default function Header() {
                           <Link
                             href="/dashboard/wallet"
                             onClick={() => setUserMenuOpen(false)}
-                            className="flex items-center justify-between p-3 kawaii-card hover:bg-[var(--accent)]/[0.12] transition-all group"
+                            className="flex items-center justify-between p-2 px-3 kawaii-card hover:bg-[var(--accent)]/[0.12] transition-all group"
                           >
                             <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full bg-[var(--accent)] flex items-center justify-center text-black shadow-lg shadow-[var(--accent)]/20">
@@ -388,7 +388,7 @@ export default function Header() {
 
                           {/* Navigation nodes compacted */}
                           <div className="space-y-1">
-                            <div className="lg:hidden grid grid-cols-2 gap-2 mb-4">
+                            <div className="lg:hidden grid grid-cols-2 gap-2 mb-2">
                               {[
                                 { label: "Games", icon: FiGrid, href: "/games" },
                                 { label: "Regions", icon: FiGlobe, href: "/region" }
@@ -415,7 +415,7 @@ export default function Header() {
                                   initial={{ opacity: 0, x: 20 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: idx * 0.05 }}
-                                  className="relative flex items-center justify-between px-3 py-2.5 rounded-2xl bg-[var(--card)] border-2 border-transparent hover:border-[#452b1b] hover:shadow-[4px_4px_0px_rgba(69,43,27,0.1)] text-[var(--muted)] hover:text-[#452b1b] group transition-all duration-300 mb-1"
+                                  className="relative flex items-center justify-between px-3 py-1.5 rounded-2xl bg-[var(--card)] border-2 border-transparent hover:border-[var(--foreground)] hover:shadow-[4px_4px_0px_var(--foreground)] text-[var(--muted)] hover:text-[var(--foreground)] group transition-all duration-300 mb-0.5"
                                   whileHover={{ x: -2 }}
                                 >
                                   <div className="flex items-center gap-3">
@@ -433,7 +433,7 @@ export default function Header() {
                                   initial={{ opacity: 0, y: 10 }}
                                   animate={{ opacity: 1, y: 0 }}
                                   transition={{ delay: 0.3 }}
-                                  className="w-full py-3 bg-[var(--accent)] text-[#452b1b] font-black italic uppercase tracking-[0.4em] text-[10px] kawaii-btn flex items-center justify-center gap-2 group relative overflow-hidden mt-6"
+                                  className="w-full py-2 bg-[var(--accent)] text-[var(--foreground)] font-black italic uppercase tracking-[0.4em] text-[10px] kawaii-btn flex items-center justify-center gap-2 group relative overflow-hidden mt-3"
                                   whileHover={{ scale: 1.02 }}
                                 >
                                   <FiSettings size={14} className="group-hover:rotate-90 transition-transform duration-700" />

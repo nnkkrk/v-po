@@ -24,13 +24,13 @@
 
 /* 🌙 Dark Mode */
 html[data-theme="dark"] {
-  --background: #1A1412;
+  --background: #0D0A09;
   --foreground: #FFF9E6;
   --accent: #FFD250;
   --accent-hover: #F2BD30;
   --muted: #A38C80;
-  --border: #3D2E26;
-  --card: #241C19;
+  --border: #261D18;
+  --card: #14100E;
 }
 
 /* 🪄 Smooth Transitions */

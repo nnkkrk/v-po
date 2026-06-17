@@ -206,23 +206,23 @@ export default function ReviewAndPaymentStep({
         {/* UPI Button */}
         <button
           onClick={handleUPI}
-          className={`w-full p-3 rounded-xl border text-left flex justify-between items-center transition-all duration-500 group ${paymentMethod === "upi"
-            ? "border-[var(--accent)] bg-[var(--accent)]/[0.05] shadow-lg shadow-[var(--accent)]/5"
-            : "border-[var(--border)] bg-[var(--foreground)]/[0.02] hover:border-[var(--accent)]/30"
+          className={`w-full p-3 rounded-2xl border-[3px] text-left flex justify-between items-center transition-all duration-300 group ${paymentMethod === "upi"
+            ? "border-[var(--foreground)] bg-[var(--background)] shadow-[0_4px_0_var(--foreground)] translate-y-[-2px]"
+            : "border-[var(--foreground)]/20 bg-[var(--card)] hover:border-[var(--foreground)]/50 hover:shadow-[0_4px_0_var(--foreground)] hover:translate-y-[-2px]"
           }`}
         >
           <div className="flex items-center gap-3">
-            <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-500 ${paymentMethod === 'upi' ? 'bg-[var(--accent)] text-black shadow-md shadow-[var(--accent)]/20' : 'bg-[var(--foreground)]/[0.05] text-[var(--muted)]'
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${paymentMethod === 'upi' ? 'bg-[var(--accent)] border-2 border-[var(--foreground)] text-[var(--foreground)] shadow-[2px_2px_0_var(--foreground)]' : 'bg-[var(--foreground)]/5 text-[var(--foreground)]/50'
             }`}>
-              <FiCreditCard size={18} />
+              <FiCreditCard size={18} strokeWidth={2.5} />
             </div>
             <div>
-              <p className="font-black text-sm uppercase tracking-tight italic">UPI Gateway</p>
-              <p className="text-[8px] font-bold text-[var(--muted)] uppercase tracking-widest opacity-60">GPay, PhonePe, Paytm</p>
+              <p className={`font-black text-sm uppercase tracking-tight ${paymentMethod === 'upi' ? 'text-[var(--foreground)]' : 'text-[var(--foreground)]/80'}`}>UPI Gateway</p>
+              <p className={`text-[9px] font-bold uppercase tracking-widest mt-0.5 ${paymentMethod === 'upi' ? 'text-[var(--foreground)]/70' : 'text-[var(--foreground)]/40'}`}>GPay, PhonePe, Paytm</p>
             </div>
           </div>
-          <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${paymentMethod === 'upi' ? 'border-[var(--accent)] bg-[var(--accent)]' : 'border-[var(--border)]'}`}>
-            {paymentMethod === 'upi' && <FiCheck size={10} className="text-black" strokeWidth={4} />}
+          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${paymentMethod === 'upi' ? 'border-[var(--foreground)] bg-[var(--accent)] shadow-[2px_2px_0_var(--foreground)]' : 'border-[var(--foreground)]/20 bg-[var(--card)]'}`}>
+            {paymentMethod === 'upi' && <FiCheck size={12} className="text-[var(--foreground)]" strokeWidth={4} />}
           </div>
         </button>
 
@@ -232,23 +232,23 @@ export default function ReviewAndPaymentStep({
             if (walletBalance < totalPrice) return;
             setPaymentMethod("wallet");
           }}
-          className={`w-full p-3 rounded-xl border text-left flex justify-between items-center transition-all duration-500 group ${paymentMethod === "wallet"
-            ? "border-[var(--accent)] bg-[var(--accent)]/[0.05] shadow-lg shadow-[var(--accent)]/5"
-            : "border-[var(--border)] bg-[var(--foreground)]/[0.02] hover:border-[var(--accent)]/30"
-          } ${walletBalance < totalPrice ? "opacity-40 cursor-not-allowed grayscale" : ""}`}
+          className={`w-full p-3 rounded-2xl border-[3px] text-left flex justify-between items-center transition-all duration-300 group ${paymentMethod === "wallet"
+            ? "border-[var(--foreground)] bg-[var(--background)] shadow-[0_4px_0_var(--foreground)] translate-y-[-2px]"
+            : "border-[var(--foreground)]/20 bg-[var(--card)] hover:border-[var(--foreground)]/50 hover:shadow-[0_4px_0_var(--foreground)] hover:translate-y-[-2px]"
+          } ${walletBalance < totalPrice ? "opacity-50 cursor-not-allowed grayscale-[50%]" : ""}`}
         >
           <div className="flex items-center gap-3">
-            <div className={`w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-500 ${paymentMethod === 'wallet' ? 'bg-[var(--accent)] text-black shadow-md shadow-[var(--accent)]/20' : 'bg-[var(--foreground)]/[0.05] text-[var(--muted)]'
+            <div className={`w-10 h-10 rounded-xl flex items-center justify-center transition-all duration-300 ${paymentMethod === 'wallet' ? 'bg-[var(--accent)] border-2 border-[var(--foreground)] text-[var(--foreground)] shadow-[2px_2px_0_var(--foreground)]' : 'bg-[var(--foreground)]/5 text-[var(--foreground)]/50'
             }`}>
-              <FiActivity size={18} />
+              <FiActivity size={18} strokeWidth={2.5} />
             </div>
             <div>
-              <p className="font-black text-sm uppercase tracking-tight italic">My Wallet</p>
-              <p className="text-[8px] font-bold text-[var(--muted)] uppercase tracking-widest opacity-60">Balance: ₹{walletBalance.toFixed(2)}</p>
+              <p className={`font-black text-sm uppercase tracking-tight ${paymentMethod === 'wallet' ? 'text-[var(--foreground)]' : 'text-[var(--foreground)]/80'}`}>My Wallet</p>
+              <p className={`text-[9px] font-bold uppercase tracking-widest mt-0.5 ${paymentMethod === 'wallet' ? 'text-[var(--foreground)]/70' : 'text-[var(--foreground)]/40'}`}>Balance: ₹{walletBalance.toFixed(2)}</p>
             </div>
           </div>
-          <div className={`w-4 h-4 rounded-full border-2 flex items-center justify-center transition-all duration-500 ${paymentMethod === 'wallet' ? 'border-[var(--accent)] bg-[var(--accent)]' : 'border-[var(--border)]'}`}>
-            {paymentMethod === 'wallet' && <FiCheck size={10} className="text-black" strokeWidth={4} />}
+          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all duration-300 ${paymentMethod === 'wallet' ? 'border-[var(--foreground)] bg-[var(--accent)] shadow-[2px_2px_0_var(--foreground)]' : 'border-[var(--foreground)]/20 bg-[var(--card)]'}`}>
+            {paymentMethod === 'wallet' && <FiCheck size={12} className="text-[var(--foreground)]" strokeWidth={4} />}
           </div>
         </button>
 
@@ -261,21 +261,21 @@ export default function ReviewAndPaymentStep({
       </div>
 
       {/* PRICE SUMMARY & ACTIONS */}
-      <div className="pt-4 border-t border-[var(--border)]/40 space-y-4">
+      <div className="pt-5 border-t-[3px] border-dashed border-[var(--foreground)]/20 space-y-4">
         <div className="space-y-2">
-          <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-[var(--muted)]">
+          <div className="flex justify-between text-[11px] font-black uppercase tracking-widest text-[var(--foreground)]/60">
             <span>Subtotal</span>
             <span>₹{price}</span>
           </div>
           {discount > 0 && (
-            <div className="flex justify-between text-[10px] font-bold uppercase tracking-widest text-emerald-500">
+            <div className="flex justify-between text-[11px] font-black uppercase tracking-widest text-emerald-500">
               <span>Discount</span>
               <span>-₹{discount}</span>
             </div>
           )}
-          <div className="flex justify-between items-center pt-1">
-            <span className="text-lg font-black uppercase tracking-tight italic">Total Price</span>
-            <span className="text-2xl font-black text-[var(--accent)]">₹{totalPrice}</span>
+          <div className="flex justify-between items-center pt-2">
+            <span className="text-xl font-black uppercase tracking-tight text-[var(--foreground)]">Total Price</span>
+            <span className="text-3xl font-black text-[var(--accent)] drop-shadow-[1px_1px_0_var(--foreground)]">₹{totalPrice}</span>
           </div>
         </div>
 
@@ -291,12 +291,17 @@ export default function ReviewAndPaymentStep({
         <button
           onClick={handleProceed}
           disabled={stopOrders || isRedirecting || !paymentMethod || (paymentMethod === "wallet" && walletBalance < totalPrice)}
-          className="w-full py-3.5 rounded-xl bg-[var(--accent)] text-black font-black uppercase tracking-[0.2em] italic shadow-2xl shadow-[var(--accent)]/20 hover:brightness-110 active:scale-[0.98] transition-all flex items-center justify-center gap-3 disabled:opacity-50 text-sm"
+          className={`w-full py-4 rounded-2xl font-black text-xl uppercase tracking-wider transition-all flex items-center justify-center gap-3
+            ${
+              (stopOrders || isRedirecting || !paymentMethod || (paymentMethod === "wallet" && walletBalance < totalPrice))
+                ? "bg-[var(--foreground)]/20 border-4 border-[var(--foreground)]/20 text-[var(--foreground)]/50 cursor-not-allowed"
+                : "bg-[var(--accent)] border-4 border-[var(--foreground)] text-[var(--foreground)] shadow-[0_6px_0_var(--foreground)] hover:translate-y-[2px] hover:shadow-[0_4px_0_var(--foreground)]"
+            }`}
         >
           {isRedirecting ? (
-            <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }} className="w-5 h-5 border-3 border-black border-t-transparent rounded-full" />
+            <motion.div animate={{ rotate: 360 }} transition={{ duration: 1, repeat: Infinity, ease: "linear" }} className="w-6 h-6 border-4 border-[var(--foreground)] border-t-transparent rounded-full" />
           ) : (
-            <>Buy Now <FiZap /></>
+            <>Buy Now <FiZap strokeWidth={3} /></>
           )}
         </button>
       </div>

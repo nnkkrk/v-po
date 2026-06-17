@@ -89,10 +89,10 @@ export default function TopupComplete() {
       <div
         className="w-full max-w-sm relative z-10"
       >
-        <div className="bg-[var(--card)] border-[4px] border-[#452b1b] shadow-[0_8px_0_rgba(69,43,27,1)] rounded-3xl p-6 md:p-8 overflow-hidden group">
+        <div className="p-6 md:p-8 overflow-hidden group">
 
           {/* TOP DECORATIVE BAR */}
-          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
+          <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-[var(--accent)]/30 to-transparent" />
 
           <AnimatePresence mode="wait">
             <div
@@ -107,7 +107,7 @@ export default function TopupComplete() {
                       <FiLoader className="text-3xl animate-spin text-[var(--accent)]" />
                     </div>
                     {/* Placeholder to keep size consistent */}
-                    <div className="w-20 h-20 rounded-full border-4 border-[#452b1b] bg-[var(--background)] shadow-[0_4px_0_rgba(69,43,27,1)]" />
+                    <div className="w-20 h-20 rounded-full border-4 border-[var(--foreground)] bg-[var(--background)] shadow-[0_4px_0_var(--foreground)]" />
                   </div>
                 )}
 
@@ -146,7 +146,7 @@ export default function TopupComplete() {
               <div className="w-full space-y-3 mt-4">
                 <button
                   onClick={() => router.push("/")}
-                  className="w-full py-4 kawaii-btn bg-[#452b1b] text-white flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-[10px]"
+                  className="w-full py-4 kawaii-btn bg-[var(--foreground)] text-[var(--background)] flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-[10px]"
                 >
                   <FiHome size={14} />
                   Go Back Home
@@ -155,7 +155,7 @@ export default function TopupComplete() {
 
                 {status === "success" && (
                   <Link href="/dashboard/order" className="w-full flex">
-                    <button className="w-full py-4 kawaii-btn bg-[var(--accent)] text-[#452b1b] flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-[10px]">
+                    <button className="w-full py-4 kawaii-btn bg-[var(--accent)] text-[var(--foreground)] flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-[10px]">
                       <FiShoppingBag size={14} />
                       Check Order
                     </button>

@@ -11,6 +11,8 @@ import {
     Trophy
 } from "lucide-react";
 import { useState, useEffect } from "react";
+import Image from "next/image";
+import logo from "@/public/logo.png";
 
 const navItems = [
     { name: "Region", href: "/region", icon: Globe2 },
@@ -72,9 +74,9 @@ export default function BottomNav() {
             animate={hiddenByScroll ? "hidden" : "visible"}
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
-            {/* Ultra Simple & Compact Premium Dock with Text */}
-            <div className="w-full max-w-[320px] bg-[var(--card)]/80 backdrop-blur-3xl border border-[var(--white)]/5 rounded-[2rem] shadow-[0_15px_35px_rgba(0,0,0,0.4)] p-1.5 pointer-events-auto">
-                <nav className="flex items-center justify-between relative h-12">
+            {/* Pompompurin Compact Themed Dock */}
+            <div className="w-full max-w-[280px] bg-[var(--card)] border-[3px] border-[var(--foreground)] rounded-[2rem] shadow-[0_6px_0_var(--foreground)] p-1.5 pointer-events-auto">
+                <nav className="flex items-center justify-between relative h-10">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                         const Icon = item.icon;
@@ -91,18 +93,26 @@ export default function BottomNav() {
                                 <motion.div 
                                     className={`relative z-10 flex items-center justify-center rounded-full transition-all duration-300 overflow-hidden ${
                                         isActive 
-                                            ? "bg-[var(--accent)] text-white h-10 px-3 gap-1.5 shadow-[0_4px_15px_rgba(var(--accent),0.4)]" 
-                                            : "bg-[var(--accent)]/10 text-[var(--accent)] h-10 w-10 hover:bg-[var(--accent)]/20"
+                                            ? "bg-[var(--accent)] text-[var(--foreground)] h-8 px-2.5 gap-1.5 border-2 border-[var(--foreground)] shadow-[2px_2px_0_var(--foreground)]" 
+                                            : "bg-[var(--foreground)]/5 text-[var(--foreground)]/60 h-8 w-8 hover:bg-[var(--foreground)]/10 hover:text-[var(--foreground)]"
                                     }`}
                                     layout
                                 >
-                                    <Icon 
-                                        className={`transition-colors duration-300 ${
-                                            isActive 
-                                                ? "text-white text-[18px]" 
-                                                : "text-[var(--accent)] text-[20px]"
-                                        }`} 
-                                    />
+                                    {item.name === "Home" ? (
+                                        <div className={`relative ${isActive ? "w-4 h-4" : "w-5 h-5"} transition-all duration-300 opacity-90`}>
+                                            <Image src={logo} alt="Home" fill className="object-contain drop-shadow-md" />
+                                        </div>
+                                    ) : (
+                                        <Icon 
+                                            size={isActive ? 14 : 18}
+                                            strokeWidth={isActive ? 3 : 2}
+                                            className={`transition-colors duration-300 ${
+                                                isActive 
+                                                    ? "text-[var(--foreground)]" 
+                                                    : "text-[var(--foreground)]/80"
+                                            }`} 
+                                        />
+                                    )}
                                     
                                     <AnimatePresence>
                                         {isActive && (
@@ -112,7 +122,7 @@ export default function BottomNav() {
                                                 exit={{ width: 0, opacity: 0 }}
                                                 className="overflow-hidden flex items-center justify-center"
                                             >
-                                                <span className="inline-block bg-white/25 text-white text-[8px] font-bold px-1.5 py-[1px] rounded-full whitespace-nowrap">
+                                                <span className="inline-block text-[var(--foreground)] text-[10px] font-black tracking-tight whitespace-nowrap">
                                                     {item.name}
                                                 </span>
                                             </motion.div>
