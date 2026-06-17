@@ -116,32 +116,8 @@ export default function GameBannerCarousel() {
                   className="object-cover"
                 />
 
-              {/* PREMIUM OVERLAYS */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-90" />
-              <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-transparent to-transparent opacity-40" />
-
-              {/* CONTENT BOX */}
-              <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-10">
-                <div
-                  className="space-y-2 md:space-y-4 max-w-4xl"
-                >
-                  <div className="flex items-center gap-2.5">
-                    <span className="w-2 h-2 rounded-full bg-amber-500 shadow-[0_0_10px_#f59e0b]" />
-                    <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-white/50">Exclusive Drop</span>
-                  </div>
-
-
-                  <h2 className="text-2xl sm:text-3xl md:text-5xl font-black italic uppercase tracking-tighter text-white leading-[0.85] drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
-                    {banners[current].bannerTitle}
-                  </h2>
-
-                  <p className="text-[10px] md:text-base font-bold text-white/40 max-w-2xl uppercase tracking-[0.1em] line-clamp-2 leading-relaxed">
-                    {banners[current].bannerSummary || "EXPERIENCE THE FUTURE OF GAMING WITH INSTANT TOP-UPS AND UNBEATABLE PRICES."}
-                  </p>
-
-
-                </div>
-              </div>
+           
+            
 
               {/* VIGNETTE */}
               <div className="absolute inset-0 border border-white/5 rounded-[2rem] md:rounded-[3.5rem] pointer-events-none" />
@@ -191,11 +167,11 @@ export default function GameBannerCarousel() {
         </div>
 
         {/* 2 POMPOMPURINS PUSHING FROM SIDES */}
-        <div className="absolute top-[80%] -translate-y-1/2 -left-16 md:-left-24 z-30 pointer-events-none">
-          <Image src="/pompom_push_nowall.png" alt="Pompompurin pushing left" width={90} height={90} className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] md:w-[140px] md:h-[140px]" />
+        <div className="absolute top-[100%] -translate-y-1/2 -left-[35px] md:-left-[60px] z-30 pointer-events-none">
+          <Image src="/pompom_push_nowall.png" alt="Pompompurin pushing left" width={55} height={55} className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] md:w-[90px] md:h-[90px]" />
         </div>
-        <div className="absolute top-[80%] -translate-y-1/2 -right-16 md:-right-24 z-30 pointer-events-none">
-          <Image src="/pompom_push_nowall.png" alt="Pompompurin pushing right" width={90} height={90} className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] md:w-[140px] md:h-[140px] scale-x-[-1]" />
+        <div className="absolute top-[100%] -translate-y-1/2 -right-[35px] md:-right-[60px] z-30 pointer-events-none">
+          <Image src="/pompom_push_nowall.png" alt="Pompompurin pushing right" width={55} height={55} className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] md:w-[90px] md:h-[90px] scale-x-[-1]" />
         </div>
       </div>
     </div>
