@@ -63,7 +63,7 @@ export default function BottomNav() {
 
     return (
         <motion.div 
-            className="fixed bottom-2 left-0 right-0 z-[100] lg:hidden flex justify-center pointer-events-none px-4"
+            className="fixed bottom-6 left-0 right-0 z-[100] lg:hidden flex justify-center pointer-events-none px-4 pb-safe"
             variants={{
                 visible: { y: 0, opacity: 1 },
                 hidden: { y: 150, opacity: 0 }
@@ -73,8 +73,8 @@ export default function BottomNav() {
             transition={{ type: "spring", stiffness: 260, damping: 20 }}
         >
             {/* Ultra Simple & Compact Premium Dock with Text */}
-            <div className="w-full max-w-[300px] bg-[var(--card)]/80 backdrop-blur-3xl border border-[var(--white)]/5 rounded-full shadow-[0_15px_35px_rgba(0,0,0,0.4)] p-1 pointer-events-auto">
-                <nav className="flex items-center justify-between relative h-10">
+            <div className="w-full max-w-[320px] bg-[var(--card)]/80 backdrop-blur-3xl border border-[var(--white)]/5 rounded-[2rem] shadow-[0_15px_35px_rgba(0,0,0,0.4)] p-1.5 pointer-events-auto">
+                <nav className="flex items-center justify-between relative h-12">
                     {navItems.map((item) => {
                         const isActive = pathname === item.href || (item.href !== "/" && pathname.startsWith(item.href));
                         const Icon = item.icon;
@@ -91,16 +91,16 @@ export default function BottomNav() {
                                 <motion.div 
                                     className={`relative z-10 flex items-center justify-center rounded-full transition-all duration-300 overflow-hidden ${
                                         isActive 
-                                            ? "bg-[var(--accent)] text-white h-8 px-2.5 gap-1.5 shadow-[0_4px_15px_rgba(var(--accent),0.4)]" 
-                                            : "bg-[var(--accent)]/10 text-[var(--accent)] h-8 w-8 hover:bg-[var(--accent)]/20"
+                                            ? "bg-[var(--accent)] text-white h-10 px-3 gap-1.5 shadow-[0_4px_15px_rgba(var(--accent),0.4)]" 
+                                            : "bg-[var(--accent)]/10 text-[var(--accent)] h-10 w-10 hover:bg-[var(--accent)]/20"
                                     }`}
                                     layout
                                 >
                                     <Icon 
                                         className={`transition-colors duration-300 ${
                                             isActive 
-                                                ? "text-white text-[16px]" 
-                                                : "text-[var(--accent)] text-[18px]"
+                                                ? "text-white text-[18px]" 
+                                                : "text-[var(--accent)] text-[20px]"
                                         }`} 
                                     />
                                     

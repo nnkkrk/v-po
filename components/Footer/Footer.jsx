@@ -68,7 +68,7 @@ const TRUST_BADGES = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[var(--background)] border-t-4 border-[#452b1b] pt-10 pb-20 lg:pb-10 overflow-hidden">
+    <footer className="relative bg-[var(--background)] border-t-4 border-[#452b1b] pt-0 pb-20 lg:pb-10 overflow-hidden">
       {/* --- PREMIUM BACKGROUND DECOR --- */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle Grid Pattern */}
@@ -82,12 +82,12 @@ export default function Footer() {
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* --- TOP SECTION: BRAND & TRUST --- */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-6 mt-2">
 
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="space-y-3">
-              <Link href="/" className="inline-block group -ml-2 -mt-2 -mb-8">
+              <Link href="/" className="inline-block group -ml-2 -mt-6 -mb-8">
                 <Image
                   src={logo}
                   alt={BRAND_NAME}
@@ -170,7 +170,7 @@ export default function Footer() {
 
         {/* --- BOTTOM SECTION: INFO --- */}
         <div className="pt-4 border-t border-[var(--border)]/60 flex flex-col items-center justify-center relative">
-          <Image src="/pompom_sleeping.png" alt="Sleepy Pompompurin" width={100} height={100} className="object-contain absolute -top-[70px]" />
+          <Image src="/pompom_sleeping.png" alt="Sleepy Pompompurin" width={90} height={90} className="object-contain absolute -top-[70px] right-2 sm:right-6 md:right-12" />
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[9px] sm:text-[11px] font-black text-[var(--muted)] uppercase tracking-[0.2em] mt-8">
             <span className="opacity-60">&copy; {new Date().getFullYear()} {COPYRIGHT_NAME}</span>
             <FaPaw className="text-[var(--border)] opacity-60 text-[8px]" />

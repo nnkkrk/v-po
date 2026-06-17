@@ -83,15 +83,16 @@ export default function GameBannerCarousel() {
 
   return (
     <div
-      className="relative w-full max-w-[1600px] mx-auto px-4 md:px-12 mt-2 md:mt-6 select-none group overflow-hidden"
+      className="relative w-full max-w-[800px] mx-auto px-12 sm:px-16 md:px-32 my-8 md:my-12 select-none group"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
       {/* BACKGROUND GLOW */}
 
 
-      <div className="relative h-[220px] sm:h-[240px] md:h-[340px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden border border-white/5 shadow-2xl bg-black">
-        <AnimatePresence initial={false} custom={direction} mode="wait">
+      <div className="relative w-full">
+        <div className="relative w-full h-[180px] sm:h-[200px] md:h-[280px] rounded-[2rem] md:rounded-[3.5rem] overflow-hidden border-[4px] border-[#452b1b] shadow-[0_12px_0_rgba(69,43,27,1)] bg-black z-20">
+          <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={current}
             custom={direction}
@@ -129,6 +130,7 @@ export default function GameBannerCarousel() {
                     <span className="text-[10px] md:text-xs font-black uppercase tracking-[0.4em] text-white/50">Exclusive Drop</span>
                   </div>
 
+
                   <h2 className="text-2xl sm:text-3xl md:text-5xl font-black italic uppercase tracking-tighter text-white leading-[0.85] drop-shadow-[0_10px_10px_rgba(0,0,0,0.5)]">
                     {banners[current].bannerTitle}
                   </h2>
@@ -162,29 +164,39 @@ export default function GameBannerCarousel() {
             <FiChevronRight size={24} />
           </button>
         </div>
-      </div>
+        
+        {/* PROGRESS INDICATORS (MOVED INSIDE) */}
+        <div className="absolute bottom-6 left-0 right-0 z-30 flex justify-center items-center gap-3">
+          {banners.map((_, i) => (
+            <button
+              key={i}
+              onClick={(e) => {
+                e.preventDefault();
+                setDirection(i > current ? 1 : -1);
+                setCurrent(i);
+              }}
+              className="h-4 flex items-center group/dot"
+            >
+              <div className={`h-[4px] rounded-full transition-all duration-700 relative overflow-hidden ${current === i
+                ? "w-8 bg-white border border-[#452b1b]/50"
+                : "w-3 bg-white/40 border border-white/20 group-hover/dot:bg-white/60"
+                }`}>
+                {current === i && (
+                  <div className="absolute inset-0 bg-amber-400" />
+                )}
+              </div>
+            </button>
+          ))}
+        </div>
+        </div>
 
-      {/* PROGRESS INDICATORS */}
-      <div className="flex justify-center items-center gap-4 mt-6">
-        {banners.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => {
-              setDirection(i > current ? 1 : -1);
-              setCurrent(i);
-            }}
-            className="h-4 flex items-center group/dot"
-          >
-            <div className={`h-[2px] rounded-full transition-all duration-700 relative overflow-hidden ${current === i
-              ? "w-12 bg-white"
-              : "w-4 bg-white/10 group-hover/dot:bg-white/30"
-              }`}>
-              {current === i && (
-                <div className="absolute inset-0 bg-amber-500" />
-              )}
-            </div>
-          </button>
-        ))}
+        {/* 2 POMPOMPURINS PUSHING FROM SIDES */}
+        <div className="absolute top-[80%] -translate-y-1/2 -left-16 md:-left-24 z-30 pointer-events-none">
+          <Image src="/pompom_push_nowall.png" alt="Pompompurin pushing left" width={90} height={90} className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] md:w-[140px] md:h-[140px]" />
+        </div>
+        <div className="absolute top-[80%] -translate-y-1/2 -right-16 md:-right-24 z-30 pointer-events-none">
+          <Image src="/pompom_push_nowall.png" alt="Pompompurin pushing right" width={90} height={90} className="object-contain drop-shadow-[0_10px_10px_rgba(0,0,0,0.3)] md:w-[140px] md:h-[140px] scale-x-[-1]" />
+        </div>
       </div>
     </div>
   );
