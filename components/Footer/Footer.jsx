@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import logo from "@/public/logo.png";
 import { motion } from "framer-motion";
 import { FaHeart, FaGamepad } from "react-icons/fa6";
 import {
@@ -66,7 +68,7 @@ const TRUST_BADGES = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-[var(--background)] border-t border-[var(--border)] pt-10 pb-20 lg:pb-10 overflow-hidden">
+    <footer className="relative bg-[var(--background)] border-t-4 border-[#452b1b] pt-10 pb-20 lg:pb-10 overflow-hidden">
       {/* --- PREMIUM BACKGROUND DECOR --- */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         {/* Subtle Grid Pattern */}
@@ -85,10 +87,14 @@ export default function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-5 space-y-4">
             <div className="space-y-3">
-              <Link href="/" className="inline-block group">
-                <h2 className="text-3xl font-black italic uppercase tracking-tighter bg-gradient-to-br from-[var(--accent)] via-[var(--foreground)] to-[var(--accent)] bg-clip-text text-transparent drop-shadow-sm transition-all duration-500 group-hover:scale-[1.02] origin-left">
-                  {BRAND_NAME}
-                </h2>
+              <Link href="/" className="inline-block group -ml-2 -mt-2 -mb-8">
+                <Image
+                  src={logo}
+                  alt={BRAND_NAME}
+                  width={160}
+                  height={80}
+                  className="object-contain transition-all duration-500 group-hover:scale-[1.02] origin-left"
+                />
               </Link>
               <p className="text-xs md:text-sm text-[var(--muted)] font-medium max-w-sm leading-relaxed opacity-80">
                 {BRAND_DESCRIPTION}
@@ -104,7 +110,7 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   whileHover={{ y: -3, scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-[var(--card)] border border-[var(--border)] text-[var(--muted)] hover:text-white hover:bg-[var(--accent)] hover:border-[var(--accent)] transition-all shadow-sm hover:shadow-[0_10px_20px_-5px_var(--accent)]/30"
+                  className="w-10 h-10 flex items-center justify-center rounded-xl bg-[var(--card)] border-2 border-[#452b1b] text-[var(--muted)] hover:text-[#452b1b] hover:bg-[var(--accent)] transition-all shadow-[2px_2px_0px_#452b1b] hover:shadow-[4px_4px_0px_#452b1b]"
                   title={label}
                 >
                   <Icon size={16} />
@@ -149,7 +155,7 @@ export default function Footer() {
               </div>
               <div className="space-y-2.5">
                 {TRUST_BADGES.map((badge, i) => (
-                  <div key={i} className="flex items-center gap-3 px-4 py-2.5 rounded-xl bg-[var(--card)]/50 border border-[var(--border)]/60 hover:border-[var(--accent)]/30 hover:bg-[var(--card)] transition-all duration-300 group/badge cursor-default">
+                  <div key={i} className="flex items-center gap-3 px-4 py-2.5 kawaii-card bg-[var(--card)] transition-all duration-300 group/badge cursor-default">
                     <badge.icon size={13} className="text-[var(--accent)] group-hover/badge:scale-110 transition-transform" />
                     <div className="flex flex-col gap-0.5">
                       <span className="text-[9px] font-black text-[var(--foreground)] tracking-wide uppercase">{badge.label}</span>

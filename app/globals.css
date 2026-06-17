@@ -2,14 +2,13 @@
 
 /* 🌍 Base Theme (Default Light) */
 :root {
-  --background: #fffdf5;
+  --background: #FFF9E6;
   --foreground: #452b1b;
-  --accent: #f59e0b;
-  /* Warm amber/yellow */
-  --accent-hover: #d97706;
-  --muted: #8b7355;
-  --border: #fef08a;
-  --card: #ffffff;
+  --accent: #FFD250;
+  --accent-hover: #F2BD30;
+  --muted: #A38C80;
+  --border: #F5E6CC;
+  --card: #FFFFFF;
 }
 
 /* 🧩 Tailwind variable mapping */
@@ -25,14 +24,13 @@
 
 /* 🌙 Dark Mode */
 html[data-theme="dark"] {
-  --background: #1c1917;
-  --foreground: #fefce8;
-  --accent: #fde047;
-  /* Soft pastel yellow */
-  --accent-hover: #fef08a;
-  --muted: #a8a29e;
-  --border: #44403c;
-  --card: #292524;
+  --background: #1A1412;
+  --foreground: #FFF9E6;
+  --accent: #FFD250;
+  --accent-hover: #F2BD30;
+  --muted: #A38C80;
+  --border: #3D2E26;
+  --card: #241C19;
 }
 
 /* 🪄 Smooth Transitions */
@@ -353,4 +351,29 @@ a:hover {
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--accent);
+}
+
+/* 🎀 Kawaii Neo-Brutalism Utilities */
+.kawaii-btn {
+  @apply rounded-full border-4 border-[#452b1b] shadow-[4px_4px_0px_#452b1b] transition-all duration-200 active:translate-x-[4px] active:translate-y-[4px] active:shadow-[0px_0px_0px_#452b1b] font-bold tracking-wide;
+}
+
+.kawaii-card {
+  @apply rounded-3xl border-4 border-[#452b1b] shadow-[6px_6px_0px_#452b1b] transition-transform duration-300 hover:-translate-y-1 hover:shadow-[6px_10px_0px_#452b1b] overflow-hidden bg-[var(--card)];
+}
+
+.kawaii-input {
+  @apply rounded-full border-4 border-[#452b1b] shadow-[4px_4px_0px_rgba(69,43,27,0.2)] focus:shadow-[4px_4px_0px_#452b1b] transition-all duration-200 bg-[var(--background)] px-6 py-3 outline-none font-bold text-[#452b1b];
+}
+
+html[data-theme="dark"] .kawaii-input {
+  @apply text-white border-[var(--border)];
+}
+
+html[data-theme="dark"] .kawaii-btn {
+  @apply border-[var(--border)] shadow-[4px_4px_0px_var(--border)] active:shadow-[0px_0px_0px_var(--border)];
+}
+
+html[data-theme="dark"] .kawaii-card {
+  @apply border-[var(--border)] shadow-[6px_6px_0px_var(--border)] hover:shadow-[6px_10px_0px_var(--border)];
 }

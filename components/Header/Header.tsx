@@ -120,9 +120,9 @@ export default function Header() {
       variants={headerVariants}
       className={`fixed top-0 left-0 w-full ${userMenuOpen ? 'z-[1000]' : 'z-[80]'} transition-colors duration-500`}
       style={{
-        backgroundColor: scrolled ? "var(--card)" : "transparent",
+        backgroundColor: scrolled ? "var(--background)" : "transparent",
         backdropFilter: scrolled ? "blur(12px)" : "none",
-        borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+        borderBottom: scrolled ? "4px solid #452b1b" : "4px solid transparent",
       }}
     >
       {/* Tactical Glow Line (only when scrolled) */}
@@ -202,8 +202,8 @@ export default function Header() {
                   setUserMenuOpen(!userMenuOpen);
                 }}
                 className={`
-                  flex items-center justify-center w-9 h-9 rounded-full transition-all duration-300
-                  ${userMenuOpen ? 'bg-[var(--accent)] ring-2 ring-[var(--accent)]/50' : 'hover:bg-[var(--card)]/50 border border-transparent hover:border-[var(--border)]'}
+                  flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300
+                  ${userMenuOpen ? 'bg-[var(--accent)] ring-2 ring-[var(--accent)]/50' : 'border-4 border-[#452b1b] hover:shadow-[4px_4px_0px_#452b1b] bg-[var(--background)]'}
                 `}
                 whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.97 }}
@@ -248,9 +248,9 @@ export default function Header() {
                     className="fixed right-0 top-0 h-[100dvh] w-[80%] sm:w-[300px] bg-[var(--card)] border-l border-[var(--border)] shadow-2xl z-[1001] flex flex-col"
                   >
                     {/* CLOSE BUTTON - FLOATING TOP RIGHT */}
-                    <div className="p-4 flex items-center justify-between border-b border-[var(--border)] shrink-0">
-                      <div className="flex flex-col">
-                        <h2 className="text-[10px] font-black italic uppercase tracking-[0.2em] text-[var(--muted)] opacity-50">Account</h2>
+                    <div className="py-3 px-4 flex items-center justify-between border-b border-[var(--border)] shrink-0">
+                      <div className="flex flex-col -ml-2 -mt-8 -mb-10">
+                        <Image src={logo} alt="Logo" width={110} height={40} className="object-contain" />
                       </div>
                       <div className="flex items-center gap-3">
                         <motion.button
@@ -300,7 +300,7 @@ export default function Header() {
 
                           <Link href="/login" onClick={() => setUserMenuOpen(false)} className="w-full mt-auto">
                             <motion.button
-                              className="w-full py-4 bg-[var(--foreground)] text-[var(--background)] font-black italic uppercase tracking-[0.4em] text-[10px] rounded-xl shadow-[0_10px_20px_-5px_rgba(0,0,0,0.4)] flex items-center justify-center gap-2 group relative overflow-hidden"
+                              className="w-full py-4 bg-[var(--accent)] text-[#452b1b] font-black italic uppercase tracking-[0.4em] text-[10px] kawaii-btn flex items-center justify-center gap-2 group relative overflow-hidden"
                               whileHover={{ scale: 1.02, backgroundColor: 'var(--accent)', color: 'black' }}
                               whileTap={{ scale: 0.98 }}
                             >
@@ -369,7 +369,7 @@ export default function Header() {
                           <Link
                             href="/dashboard/wallet"
                             onClick={() => setUserMenuOpen(false)}
-                            className="flex items-center justify-between p-4 rounded-2xl bg-[var(--accent)]/[0.08] border border-[var(--accent)]/20 hover:bg-[var(--accent)]/[0.12] transition-all group shadow-inner"
+                            className="flex items-center justify-between p-4 kawaii-card hover:bg-[var(--accent)]/[0.12] transition-all group"
                           >
                             <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full bg-[var(--accent)] flex items-center justify-center text-black shadow-lg shadow-[var(--accent)]/20">
@@ -414,7 +414,7 @@ export default function Header() {
                                   initial={{ opacity: 0, x: 20 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: idx * 0.05 }}
-                                  className="relative flex items-center justify-between px-3 py-2 rounded-lg hover:bg-[var(--foreground)]/[0.04] text-[var(--muted)] group transition-all duration-300 border border-transparent hover:border-[var(--border)]"
+                                  className="relative flex items-center justify-between px-4 py-3 rounded-2xl bg-[var(--card)] border-2 border-transparent hover:border-[#452b1b] hover:shadow-[4px_4px_0px_rgba(69,43,27,0.1)] text-[var(--muted)] hover:text-[#452b1b] group transition-all duration-300 mb-2"
                                   whileHover={{ x: -2 }}
                                 >
                                   <div className="flex items-center gap-3">
@@ -432,7 +432,7 @@ export default function Header() {
                                   initial={{ opacity: 0, y: 10 }}
                                   animate={{ opacity: 1, y: 0 }}
                                   transition={{ delay: 0.3 }}
-                                  className="flex items-center gap-3 px-4 py-3 rounded-xl bg-[var(--accent)]/10 border border-[var(--accent)]/30 text-[var(--accent)] hover:bg-[var(--accent)]/20 transition-all mt-4 group shadow-sm"
+                                  className="w-full py-3 bg-[var(--accent)] text-[#452b1b] font-black italic uppercase tracking-[0.4em] text-[10px] kawaii-btn flex items-center justify-center gap-2 group relative overflow-hidden mt-6"
                                   whileHover={{ scale: 1.02 }}
                                 >
                                   <FiSettings size={14} className="group-hover:rotate-90 transition-transform duration-700" />

@@ -42,6 +42,10 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+import { Quicksand } from "next/font/google";
+
+const quicksand = Quicksand({ subsets: ["latin"], weight: ["400", "500", "600", "700"] });
+
 export default function RootLayout({
   children,
 }: {
@@ -49,7 +53,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-white">
+      <body className={`${quicksand.className} bg-[var(--background)] text-[var(--foreground)] transition-colors duration-300`}>
         <GoogleOAuthProvider clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID!}>
 
           <Header />

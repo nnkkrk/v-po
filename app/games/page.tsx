@@ -103,7 +103,7 @@ export default function GamesPage() {
           className={`flex flex-col gap-3 ${disabled ? "cursor-not-allowed" : "cursor-pointer"}`}
         >
           {/* IMAGE WRAPPER */}
-          <div className="relative aspect-square rounded-[1.4rem] overflow-hidden bg-[var(--card)] border border-[var(--border)] transition-[border-color,transform,box-shadow] duration-300 group-hover:border-[var(--accent)]/40 shadow-sm group-hover:shadow-md">
+          <div className="relative aspect-square kawaii-card">
 
             <div className="relative w-full h-full flex items-center justify-center">
               {!imgError ? (
@@ -273,9 +273,7 @@ export default function GamesPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Find a game..."
-              className="w-full h-9 pl-9 pr-9 rounded-full border border-[var(--border)]/50 
-                       bg-[var(--card)]/40 text-[12px] font-medium outline-none transition-all
-                       focus:border-[var(--accent)]/30 focus:bg-[var(--card)]/60"
+              className="w-full h-11 pl-9 pr-9 kawaii-input text-[12px] md:text-[14px]"
             />
             {searchQuery && (
               <button
@@ -332,7 +330,7 @@ export default function GamesPage() {
                   className="group cursor-pointer transform-gpu"
                 >
                   <Link href={`/games/${ott.slug}`} className="flex flex-col gap-5">
-                    <div className="relative aspect-[3/4] overflow-hidden rounded-[1.5rem] bg-[var(--card)] border border-[var(--border)]/40 transition-[border-color,box-shadow] duration-300 group-hover:border-[var(--accent)]/50 group-hover:shadow-lg">
+                    <div className="relative aspect-[3/4] kawaii-card">
                       <Image
                         src={ott.image}
                         alt={ott.name}
@@ -380,7 +378,7 @@ export default function GamesPage() {
                 >
                   <Link
                     href={`/games/${plan.slug}`}
-                    className="relative flex flex-col p-4 rounded-[1.2rem] bg-[var(--card)] border border-[var(--border)]/40 transition-all duration-300 hover:border-[var(--accent)] hover:shadow-lg hover:shadow-[var(--accent)]/5 overflow-hidden"
+                    className="relative flex flex-col p-4 kawaii-card"
                   >
                     <div className="flex items-center gap-3 mb-3">
                       <div className="w-10 h-10 relative rounded-lg overflow-hidden border border-[var(--border)] shrink-0">

@@ -65,7 +65,7 @@ export default function HeroSection() {
       <FlashSale />
 
       <StorySlider />
-      {/*  <HomeQuickActions />  */}
+       <HomeQuickActions /> 
 
       <GamesPage />
 
