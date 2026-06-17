@@ -120,7 +120,7 @@ export default function SeoTab() {
               value={settings.SEO_TITLE}
               onChange={(e) => setSettings(prev => ({...prev, SEO_TITLE: e.target.value}))}
               className="w-full bg-[var(--card)] border border-[var(--border)] rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-[var(--accent)]"
-              placeholder="e.g. Tronics Store - MLBB Diamond Top Up"
+              placeholder="e.g. Visi Store - MLBB Diamond Top Up"
             />
           </div>
 

@@ -11,8 +11,8 @@ import { connectDB } from "@/lib/mongodb";
 import SystemSetting from "@/models/SystemSetting";
 
 export async function generateMetadata(): Promise<Metadata> {
-  let title = "Tronics Store – MLBB Diamond Top Up | Instant & Secure";
-  let description = "Tronics Store is a fast and secure Mobile Legends (MLBB) diamond top-up platform. Instant delivery, safe payments, and 24/7 automated service.";
+  let title = "Visi Store – MLBB Diamond Top Up | Instant & Secure";
+  let description = "Visi Store is a fast and secure Mobile Legends (MLBB) diamond top-up platform. Instant delivery, safe payments, and 24/7 automated service.";
   let keywords = "mlbb top up, buy diamonds, mobile legends diamonds";
 
   try {

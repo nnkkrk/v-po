@@ -26,7 +26,7 @@ const FEATURES = [
   }
 ];
 
-export default function TronicsWho() {
+export default function VisiWho() {
   return (
     <section className="py-8 px-4 bg-[var(--background)] relative overflow-hidden">
       {/* Background Subtle Elements */}
@@ -39,14 +39,14 @@ export default function TronicsWho() {
         >
           <div className="flex items-center justify-center gap-3 mb-3">
              <div className="h-px w-8 bg-gradient-to-r from-transparent to-[var(--accent)]" />
-             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--accent)] opacity-70">About Tronics</span>
+             <span className="text-[10px] font-black uppercase tracking-[0.4em] text-[var(--accent)] opacity-70">About Visi</span>
              <div className="h-px w-8 bg-gradient-to-l from-transparent to-[var(--accent)]" />
           </div>
           <h2 className="text-3xl md:text-4xl font-black italic uppercase tracking-tighter text-[var(--foreground)] leading-none mb-4">
-             Who is <span className="text-[var(--accent)]">Tronics?</span>
+             Who is <span className="text-[var(--accent)]">Visi?</span>
           </h2>
           <p className="text-xs md:text-sm text-[var(--muted)] font-medium max-w-2xl mx-auto leading-relaxed px-4 opacity-80">
-             Tronics Store is your trusted shop for fast and safe game top-ups in India. We make it easy for you to get your game credits instantly, so you can focus on playing and winning.
+             Visi Store is your trusted shop for fast and safe game top-ups in India. We make it easy for you to get your game credits instantly, so you can focus on playing and winning.
           </p>
         </div>
 

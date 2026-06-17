@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 
 const NOTICES = [
-  "Welcome to Tronics Top-Up",
+  "Welcome to Visi Top-Up",
   "Fast and Safe Top-Ups",
   "24x7 Auto Delivery",
   "Live Chat Support Available",
