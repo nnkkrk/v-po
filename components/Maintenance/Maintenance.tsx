@@ -83,10 +83,10 @@ export default function Maintenance() {
                                 </Link>
                                 
                                 <button 
-                                    onClick={() => window.open('https://waitlist.visi.official', '_blank')}
+                                    onClick={() => window.open('https://waitlist.vishi.official', '_blank')}
                                     className="text-zinc-600 text-[10px] font-bold uppercase tracking-[0.3em] hover:text-zinc-400 transition-colors"
                                 >
-                                    Visi Official
+                                    Vishi Official
                                 </button>
                             </div>
                         </div>

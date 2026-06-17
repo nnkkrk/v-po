@@ -2,14 +2,14 @@
 
 /* 🌍 Base Theme (Default Light) */
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
-  --accent: #3b82f6;
-  /* Bright sky blue (default accent) */
-  --accent-hover: #2563eb;
-  --muted: #64748b;
-  --border: #e2e8f0;
-  --card: #f1f5f9;
+  --background: #fffdf5;
+  --foreground: #452b1b;
+  --accent: #f59e0b;
+  /* Warm amber/yellow */
+  --accent-hover: #d97706;
+  --muted: #8b7355;
+  --border: #fef08a;
+  --card: #ffffff;
 }
 
 /* 🧩 Tailwind variable mapping */
@@ -25,14 +25,14 @@
 
 /* 🌙 Dark Mode */
 html[data-theme="dark"] {
-  --background: #000000;
-  --foreground: #f8fafc;
-  --accent: #7dd3fc;
-  /* Electric cyan */
-  --accent-hover: #38bdf8;
-  --muted: #a1a1aa;
-  --border: #18181b;
-  --card: #000000;
+  --background: #1c1917;
+  --foreground: #fefce8;
+  --accent: #fde047;
+  /* Soft pastel yellow */
+  --accent-hover: #fef08a;
+  --muted: #a8a29e;
+  --border: #44403c;
+  --card: #292524;
 }
 
 /* 🪄 Smooth Transitions */

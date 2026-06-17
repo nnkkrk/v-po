@@ -1,89 +1,53 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiMoon, FiSun } from "react-icons/fi";
 
-const themes = [
-  { id: "dark", icon: <FiMoon />, label: "Dark", color: "#9333ea" },
-  { id: "light", icon: <FiSun />, label: "Light", color: "#f59e0b" },
-];
-
 export default function ThemeToggle() {
   const [theme, setTheme] = useState<string>("dark");
-  const [open, setOpen] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const stored = localStorage.getItem("theme") || "dark";
     setTheme(stored);
     document.documentElement.setAttribute("data-theme", stored);
   }, []);
 
-  const changeTheme = (newTheme: string) => {
+  const toggleTheme = () => {
+    const newTheme = theme === "dark" ? "light" : "dark";
     setTheme(newTheme);
     localStorage.setItem("theme", newTheme);
     document.documentElement.setAttribute("data-theme", newTheme);
-    setOpen(false);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
-        setOpen(false);
-      }
-    };
-    if (open) {
-      document.addEventListener("mousedown", handleClickOutside);
-      return () => document.removeEventListener("mousedown", handleClickOutside);
-    }
-  }, [open]);
+  // Prevent hydration mismatch
+  if (!mounted) return <div className="w-8 h-8" />;
 
-  const currentTheme = themes.find((t) => t.id === theme) || themes[0];
+  const isDark = theme === "dark";
 
   return (
-    <div ref={containerRef} className="relative">
-      <motion.button
-        onClick={() => setOpen(!open)}
-        className="w-8 h-8 flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card)]/50 hover:bg-[var(--card)] transition-all backdrop-blur-sm"
-        whileHover={{ scale: 1.05 }}
-        whileTap={{ scale: 0.95 }}
-      >
-        <span className="text-sm" style={{ color: currentTheme.color }}>{currentTheme.icon}</span>
-      </motion.button>
-
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: 8 }}
-            className="absolute right-0 mt-2 w-48 bg-[var(--card)] border border-[var(--border)] rounded-2xl shadow-xl overflow-hidden z-[100] backdrop-blur-xl"
-          >
-            <div className="p-2 flex flex-col gap-1 max-h-80 overflow-y-auto">
-              <div className="px-3 py-1.5 text-[9px] font-black uppercase tracking-[0.15em] text-[var(--muted)]">
-                Select Theme
-              </div>
-              {themes.map((t) => (
-                <button
-                  key={t.id}
-                  onClick={() => changeTheme(t.id)}
-                  className={`
-                    flex items-center gap-3 w-full px-3 py-2 rounded-xl text-xs font-semibold transition-all
-                    ${theme === t.id 
-                      ? 'bg-[var(--accent)] text-white' 
-                      : 'hover:bg-[var(--accent)]/10 text-[var(--foreground)]'}
-                  `}
-                >
-                  <span className="text-base" style={{ color: theme === t.id ? '#fff' : t.color }}>{t.icon}</span>
-                  <span>{t.label}</span>
-                </button>
-              ))}
-            </div>
-          </motion.div>
-        )}
+    <motion.button
+      onClick={toggleTheme}
+      className="relative w-8 h-8 flex items-center justify-center rounded-full border border-[var(--border)] bg-[var(--card)]/50 hover:bg-[var(--card)] transition-colors backdrop-blur-sm overflow-hidden"
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+      aria-label="Toggle Theme"
+    >
+      <AnimatePresence mode="wait" initial={false}>
+        <motion.div
+          key={isDark ? "dark" : "light"}
+          initial={{ y: -20, opacity: 0, rotate: -90 }}
+          animate={{ y: 0, opacity: 1, rotate: 0 }}
+          exit={{ y: 20, opacity: 0, rotate: 90 }}
+          transition={{ duration: 0.2, ease: "easeInOut" }}
+          className="absolute text-sm"
+          style={{ color: isDark ? "#9333ea" : "#f59e0b" }}
+        >
+          {isDark ? <FiMoon /> : <FiSun />}
+        </motion.div>
       </AnimatePresence>
-    </div>
+    </motion.button>
   );
 }
-

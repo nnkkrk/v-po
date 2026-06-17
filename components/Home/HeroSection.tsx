@@ -9,7 +9,7 @@ import {
   TopNoticeBannerSkeleton,
   FlashSaleSkeleton,
   StorySliderSkeleton,
-  VisiWhoSkeleton,
+  VishiWhoSkeleton,
   HomeServicesSkeleton
 } from "./HomeSkeletons";
 
@@ -32,9 +32,9 @@ const HomeServices = dynamic(() => import("./HomeServices"), {
   ssr: false,
   loading: () => <HomeServicesSkeleton />
 });
-const VisiWho = dynamic(() => import("./VisiWho"), { 
+const VishiWho = dynamic(() => import("./VishiWho"), { 
   ssr: false,
-  loading: () => <VisiWhoSkeleton />
+  loading: () => <VishiWhoSkeleton />
 });
 const TrustHighlights = dynamic(() => import("./TrustHighlights"), { ssr: false });
 const MLBBPurchaseGuide = dynamic(() => import("../HelpImage/MLBBPurchaseGuide"), { ssr: false });
@@ -70,7 +70,7 @@ export default function HeroSection() {
       <GamesPage />
 
 
-      <VisiWho />
+      {/* <VishiWho /> */}
       <HomeServices />
       {/* <TrustHighlights /> */}
 

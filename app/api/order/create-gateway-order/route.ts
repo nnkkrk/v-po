@@ -209,7 +209,7 @@ export async function POST(req: Request) {
 
     /* ---------- ORDER ID ---------- */
     const orderId = (
-      "VISITK" +
+      "VISHITK" +
       Date.now().toString(36) +
       crypto.randomBytes(8).toString("hex")
     ).toUpperCase();
