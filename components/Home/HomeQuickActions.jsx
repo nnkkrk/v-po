@@ -75,9 +75,9 @@ function QuickItem({ href, icon: Icon, label, color }) {
       >
         {/* Flat Colored Icon Container */}
         <div className={`
-          relative h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex items-center justify-center 
-          rounded-xl sm:rounded-2xl
-          bg-white/[0.03] dark:bg-zinc-900/[0.2] transition-all duration-300
+          relative h-12 w-12 sm:h-14 sm:w-14 md:h-16 md:w-16 flex items-center justify-center 
+          rounded-2xl border-[3px] border-[#452b1b] shadow-[0_4px_0_rgba(69,43,27,1)] 
+          bg-[var(--card)] group-hover:shadow-[0_2px_0_rgba(69,43,27,1)] group-hover:translate-y-[2px] transition-all
         `}>
             {/* Icon - Always Colorful & Bold */}
             <Icon

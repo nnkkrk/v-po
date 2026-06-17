@@ -4,7 +4,8 @@ import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
 import ThemeToggle from "../ThemeToggle/ThemeToggle";
-import { FiPlus, FiChevronDown, FiUser, FiLayout, FiSettings, FiLifeBuoy, FiLogOut, FiBarChart2, FiHome, FiGrid, FiLayers, FiGlobe, FiX, FiChevronRight } from "react-icons/fi";
+import { FiPlus, FiChevronDown, FiUser, FiLayout, FiSettings, FiLifeBuoy, FiLogOut, FiBarChart2, FiHome, FiGrid, FiLayers, FiGlobe, FiX, FiChevronRight, FiMenu } from "react-icons/fi";
+import { FaPaw } from "react-icons/fa6";
 import Image from "next/image";
 import logo from "@/public/logo.png";
 import Skeleton from "../Skeleton";
@@ -202,13 +203,13 @@ export default function Header() {
                   setUserMenuOpen(!userMenuOpen);
                 }}
                 className={`
-                  flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300
-                  ${userMenuOpen ? 'bg-[var(--accent)] ring-2 ring-[var(--accent)]/50' : 'border-4 border-[#452b1b] hover:shadow-[4px_4px_0px_#452b1b] bg-[var(--background)]'}
+                  flex items-center justify-center gap-2 pl-2.5 pr-1 h-10 rounded-full transition-all duration-300
+                  ${userMenuOpen ? 'bg-[var(--accent)] shadow-none translate-y-1 border-[3px] border-[#452b1b]' : 'border-[3px] border-[#452b1b] hover:-translate-y-1 hover:shadow-[0_4px_0_#452b1b] active:translate-y-0 active:shadow-none bg-[var(--background)]'}
                 `}
-                whileHover={{ y: -1 }}
                 whileTap={{ scale: 0.97 }}
               >
-                <div className="w-full h-full rounded-full bg-[var(--accent)] flex items-center justify-center overflow-hidden shadow-sm">
+                <FiMenu className="text-[#452b1b] text-lg" />
+                <div className="w-7 h-7 rounded-full bg-[var(--accent)] flex items-center justify-center overflow-hidden border border-[#452b1b]/20">
                   {user?.avatar && !avatarError ? (
                     <img
                       src={user.avatar}
@@ -217,7 +218,7 @@ export default function Header() {
                       onError={() => setAvatarError(true)}
                     />
                   ) : (
-                    <span className="text-white text-[12px] font-black uppercase">
+                    <span className="text-[#452b1b] text-[14px] font-black uppercase">
                       {(user?.name || user?.username || user?.email || "U")[0]}
                     </span>
                   )}
@@ -249,8 +250,8 @@ export default function Header() {
                   >
                     {/* CLOSE BUTTON - FLOATING TOP RIGHT */}
                     <div className="py-3 px-4 flex items-center justify-between border-b border-[var(--border)] shrink-0">
-                      <div className="flex flex-col -ml-2 -mt-8 -mb-10">
-                        <Image src={logo} alt="Logo" width={110} height={40} className="object-contain" />
+                      <div className="flex flex-col -ml-2 -mt-6 -mb-8">
+                        <Image src={logo} alt="Logo" width={80} height={30} className="object-contain" />
                       </div>
                       <div className="flex items-center gap-3">
                         <motion.button
@@ -312,7 +313,7 @@ export default function Header() {
                       ) : (
                         <div className="space-y-4">
                           {/* User Profile Header horizontal - COMPACT */}
-                          <div className="flex items-center gap-3 pb-4 border-b border-[var(--border)] relative">
+                          <div className="flex items-center gap-3 pb-3 border-b border-[var(--border)] relative">
                             {/* Left: Avatar */}
                             <div className="w-10 h-10 rounded-lg bg-[var(--accent)] p-[1.5px] shadow-lg shrink-0">
                               <div className="w-full h-full rounded-[0.7rem] overflow-hidden bg-[var(--card)]">
@@ -369,7 +370,7 @@ export default function Header() {
                           <Link
                             href="/dashboard/wallet"
                             onClick={() => setUserMenuOpen(false)}
-                            className="flex items-center justify-between p-4 kawaii-card hover:bg-[var(--accent)]/[0.12] transition-all group"
+                            className="flex items-center justify-between p-3 kawaii-card hover:bg-[var(--accent)]/[0.12] transition-all group"
                           >
                             <div className="flex items-center gap-3">
                               <div className="w-8 h-8 rounded-full bg-[var(--accent)] flex items-center justify-center text-black shadow-lg shadow-[var(--accent)]/20">
@@ -414,14 +415,14 @@ export default function Header() {
                                   initial={{ opacity: 0, x: 20 }}
                                   animate={{ opacity: 1, x: 0 }}
                                   transition={{ delay: idx * 0.05 }}
-                                  className="relative flex items-center justify-between px-4 py-3 rounded-2xl bg-[var(--card)] border-2 border-transparent hover:border-[#452b1b] hover:shadow-[4px_4px_0px_rgba(69,43,27,0.1)] text-[var(--muted)] hover:text-[#452b1b] group transition-all duration-300 mb-2"
+                                  className="relative flex items-center justify-between px-3 py-2.5 rounded-2xl bg-[var(--card)] border-2 border-transparent hover:border-[#452b1b] hover:shadow-[4px_4px_0px_rgba(69,43,27,0.1)] text-[var(--muted)] hover:text-[#452b1b] group transition-all duration-300 mb-1"
                                   whileHover={{ x: -2 }}
                                 >
                                   <div className="flex items-center gap-3">
                                     <link.icon className="text-lg opacity-50 group-hover:opacity-100 group-hover:text-[var(--accent)] transition-all duration-300" />
                                     <span className="text-[10px] font-black uppercase tracking-widest group-hover:text-[var(--foreground)] transition-colors">{link.label}</span>
                                   </div>
-                                  <div className="w-1.5 h-1.5 rounded-full bg-[var(--accent)] shadow-[0_0_8px_rgba(var(--accent-rgb),0.5)] opacity-0 group-hover:opacity-100 transition-all duration-300" />
+                                  <FaPaw className="text-[var(--accent)] text-xs opacity-0 group-hover:opacity-100 group-hover:-rotate-12 group-hover:scale-110 transition-all duration-300" />
                                 </motion.div>
                               </Link>
                             ))}
@@ -446,9 +447,12 @@ export default function Header() {
                     </div>
 
                     {/* FOOTER OF SIDEBAR */}
-                    <div className="p-4 border-t border-[var(--border)] mt-auto bg-[var(--foreground)]/[0.02] text-center space-y-1">
-                      <p className="text-[7px] font-black uppercase tracking-[0.4em] text-[var(--accent)] opacity-50">Love from TK</p>
-                      <p className="text-[8px] font-bold text-[var(--muted)] uppercase tracking-[0.3em] opacity-30">VISHI © 2026</p>
+                    <div className="relative py-3 px-6 border-t border-[var(--border)] mt-auto bg-[var(--foreground)]/[0.02] flex items-center justify-end">
+                      <Image src="/pompom_sidebar.png" alt="Pompompurin" width={70} height={70} className="absolute -top-[48px] left-4 object-contain" />
+                      <div className="text-right space-y-0.5 z-10 relative">
+                        <p className="text-[7px] font-black uppercase tracking-[0.4em] text-[var(--accent)] opacity-50">Love from TK</p>
+                        <p className="text-[7px] font-bold text-[var(--muted)] uppercase tracking-[0.3em] opacity-30">VISHI © 2026</p>
+                      </div>
                     </div>
                   </motion.div>
                 </>

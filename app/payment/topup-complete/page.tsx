@@ -13,6 +13,7 @@ import {
 } from "react-icons/fi";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 import confetti from "canvas-confetti";
 
 export default function TopupComplete() {
@@ -88,7 +89,7 @@ export default function TopupComplete() {
       <div
         className="w-full max-w-sm relative z-10"
       >
-        <div className="bg-card/40 backdrop-blur-2xl border border-foreground/5 rounded-[2rem] p-6 md:p-8 shadow-2xl overflow-hidden group">
+        <div className="bg-[var(--card)] border-[4px] border-[#452b1b] shadow-[0_8px_0_rgba(69,43,27,1)] rounded-3xl p-6 md:p-8 overflow-hidden group">
 
           {/* TOP DECORATIVE BAR */}
           <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-amber-500/30 to-transparent" />
@@ -103,26 +104,22 @@ export default function TopupComplete() {
                 {status === "checking" && (
                   <div className="relative">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <FiLoader className="text-3xl animate-spin text-amber-500" />
+                      <FiLoader className="text-3xl animate-spin text-[var(--accent)]" />
                     </div>
                     {/* Placeholder to keep size consistent */}
-                    <div className="w-16 h-16 rounded-full border border-amber-500/10" />
+                    <div className="w-20 h-20 rounded-full border-4 border-[#452b1b] bg-[var(--background)] shadow-[0_4px_0_rgba(69,43,27,1)]" />
                   </div>
                 )}
 
                 {status === "success" && (
-                  <div
-                    className="w-16 h-16 rounded-full bg-green-500/10 flex items-center justify-center border border-green-500/20"
-                  >
-                    <FiCheckCircle className="text-4xl text-green-500" />
+                  <div className="w-32 h-32 relative mx-auto drop-shadow-xl hover:-translate-y-2 transition-transform">
+                    <Image src="/pompom_diamond.png" alt="Success" fill className="object-contain" />
                   </div>
                 )}
 
                 {status === "failed" && (
-                  <div
-                    className="w-16 h-16 rounded-full bg-red-500/10 flex items-center justify-center border border-red-500/20"
-                  >
-                    <FiXCircle className="text-4xl text-red-500" />
+                  <div className="w-32 h-32 relative mx-auto drop-shadow-xl hover:-translate-y-2 transition-transform">
+                    <Image src="/pompom_sleeping.png" alt="Failed" fill className="object-contain grayscale opacity-80" />
                   </div>
                 )}
               </div>
@@ -146,22 +143,19 @@ export default function TopupComplete() {
               </div>
 
               {/* ACTION BUTTONS */}
-              <div className="w-full space-y-3">
+              <div className="w-full space-y-3 mt-4">
                 <button
                   onClick={() => router.push("/")}
-                  className="group w-full relative h-12 bg-foreground text-background rounded-xl overflow-hidden transition-all active:scale-95"
+                  className="w-full py-4 kawaii-btn bg-[#452b1b] text-white flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-[10px]"
                 >
-                  <div className="absolute inset-0 bg-amber-500 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  <div className="relative z-10 flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-xs">
-                    <FiHome size={14} />
-                    Go Back Home
-                    <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-                  </div>
+                  <FiHome size={14} />
+                  Go Back Home
+                  <FiArrowRight />
                 </button>
 
                 {status === "success" && (
                   <Link href="/dashboard/order" className="w-full flex">
-                    <button className="group w-full relative h-12 bg-[var(--accent)]/10 text-[var(--accent)] border border-[var(--accent)]/20 rounded-xl overflow-hidden transition-all active:scale-95 hover:bg-[var(--accent)]/20 flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-xs">
+                    <button className="w-full py-4 kawaii-btn bg-[var(--accent)] text-[#452b1b] flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-[10px]">
                       <FiShoppingBag size={14} />
                       Check Order
                     </button>
@@ -170,7 +164,7 @@ export default function TopupComplete() {
 
                 {status === "failed" && (
                   <Link href="/support" className="w-full flex">
-                    <button className="group w-full relative h-12 bg-red-500/10 text-red-500 border border-red-500/20 rounded-xl overflow-hidden transition-all active:scale-95 hover:bg-red-500/20 flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-xs">
+                    <button className="w-full py-4 kawaii-btn bg-red-500 text-white flex items-center justify-center gap-3 font-black italic uppercase tracking-widest text-[10px]">
                       <FiHelpCircle size={14} />
                       Contact Support
                     </button>

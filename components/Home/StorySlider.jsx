@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
+import { FaPaw } from "react-icons/fa6";
 
 const storyData = [
 
@@ -103,7 +104,7 @@ export default function StorySlider() {
                     `} />
 
                     {/* Inner Image Container */}
-                    <div className="relative w-full h-full rounded-full border-[3px] border-[var(--background)] overflow-hidden bg-black z-10 transition-transform duration-500">
+                    <div className="relative w-full h-full rounded-full border-[4px] border-[#452b1b] overflow-hidden bg-black z-10 transition-transform duration-500">
                       <Image
                         src={item.image}
                         alt={item.title}
@@ -120,14 +121,12 @@ export default function StorySlider() {
                   {/* ENHANCED LABEL / BADGE */}
                   <div className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 z-20 transition-transform duration-500 group-hover:translate-y-1">
                     <div className={`
-                      flex items-center gap-1.5 bg-[var(--card)] text-[var(--foreground)] px-2.5 py-0.5 rounded-full 
-                      shadow-[0_4px_10px_rgba(0,0,0,0.2)] border border-[var(--border)]
+                      flex items-center gap-1.5 bg-[var(--card)] text-[var(--foreground)] px-2.5 py-1 rounded-full 
+                      border-2 border-[#452b1b] shadow-[0_2px_0_rgba(69,43,27,1)]
                       transition-all duration-300 group-hover:scale-110
                     `}>
                       {item.isLive && (
-                        <span className="relative flex h-1.5 w-1.5">
-                          <span className="relative inline-flex rounded-full h-1.5 w-1.5 bg-red-500"></span>
-                        </span>
+                        <FaPaw className="text-red-500 animate-pulse" size={10} />
                       )}
                       <span className="text-[8.5px] font-black uppercase tracking-[0.1em] italic">
                         {item.label}

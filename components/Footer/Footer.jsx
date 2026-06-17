@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import logo from "@/public/logo.png";
 import { motion } from "framer-motion";
-import { FaHeart, FaGamepad } from "react-icons/fa6";
+import { FaHeart, FaGamepad, FaPaw } from "react-icons/fa6";
 import {
   FiInstagram,
   FiMessageSquare,
@@ -124,7 +124,7 @@ export default function Footer() {
             {FOOTER_LINKS.map((section) => (
               <div key={section.title} className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-1 h-3 rounded-full bg-[var(--accent)] opacity-40" />
+                  <FaPaw className="text-[var(--accent)] text-[10px] opacity-70" />
                   <h3 className="text-[10px] font-black text-[var(--foreground)] uppercase tracking-[0.2em] opacity-60">
                     {section.title}
                   </h3>
@@ -169,10 +169,11 @@ export default function Footer() {
         </div>
 
         {/* --- BOTTOM SECTION: INFO --- */}
-        <div className="pt-4 border-t border-[var(--border)]/60 flex items-center justify-center">
-          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[9px] sm:text-[11px] font-black text-[var(--muted)] uppercase tracking-[0.2em]">
+        <div className="pt-4 border-t border-[var(--border)]/60 flex flex-col items-center justify-center relative">
+          <Image src="/pompom_sleeping.png" alt="Sleepy Pompompurin" width={100} height={100} className="object-contain absolute -top-[70px]" />
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-[9px] sm:text-[11px] font-black text-[var(--muted)] uppercase tracking-[0.2em] mt-8">
             <span className="opacity-60">&copy; {new Date().getFullYear()} {COPYRIGHT_NAME}</span>
-            <div className="w-1 h-1 rounded-full bg-[var(--border)] opacity-40" />
+            <FaPaw className="text-[var(--border)] opacity-60 text-[8px]" />
             <span className="opacity-60">All Rights Reserved</span>
           </div>
         </div>

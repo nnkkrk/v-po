@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { FiFilter, FiX, FiSearch, FiZap, FiBox, FiActivity, FiArrowRight } from "react-icons/fi";
+import { FaPaw } from "react-icons/fa6";
 import logo from "@/public/logo.png";
 import dynamic from "next/dynamic";
 import Skeleton from "@/components/Skeleton";
@@ -141,7 +142,7 @@ export default function GamesPage() {
                       color: game.tagId.tagColor,
                     }}
                   >
-                    <div className="w-1 h-1 rounded-full bg-current" />
+                    <FaPaw className="text-current animate-pulse" size={8} />
                     {game.tagId.tagName}
                   </div>
                 ) : <div />}
@@ -179,12 +180,16 @@ export default function GamesPage() {
   });
   GameCard.displayName = "GameCard";
 
-  const SectionHeader = ({ title, count, icon: Icon }: any) => (
+  const SectionHeader = ({ title, count, icon: Icon, image }: any) => (
     <div className="flex items-center justify-between mb-6">
       <div className="flex items-center gap-3">
-        <div className="w-10 h-10 rounded-xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] shadow-sm">
-          <Icon size={18} />
-        </div>
+        {image ? (
+          <Image src={image} alt="Gaming" width={50} height={50} className="object-contain drop-shadow-md" />
+        ) : (
+          <div className="w-10 h-10 rounded-xl bg-[var(--card)] border border-[var(--border)] flex items-center justify-center text-[var(--accent)] shadow-sm">
+            <Icon size={18} />
+          </div>
+        )}
         <div>
           <h2 className="text-xl md:text-2xl font-black italic uppercase tracking-tighter text-[var(--foreground)]">
             {title}
@@ -311,6 +316,7 @@ export default function GamesPage() {
             title="Our Games"
             count={processedGames.length}
             icon={FiBox}
+            image="/pompom_gaming.png"
           />
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-x-3 gap-y-5">
             {processedGames.map((game: any, i: number) => (

@@ -99,8 +99,8 @@ export default function FlashSale() {
                 {/* COMPACT HEADER */}
                 <div className="flex flex-row items-center justify-between gap-2 mb-2">
                     <div className="flex items-center gap-2">
-                        <div className="w-5 h-5 rounded-md bg-amber-500 flex items-center justify-center text-black shadow-[0_0_10px_rgba(245,158,11,0.3)]">
-                            <FiZap size={12} fill="currentColor" />
+                        <div className="w-10 h-10 flex items-center justify-center text-black">
+                            <Image src="/pompom_diamond.png" alt="Diamond Pompompurin" width={40} height={40} className="object-contain" />
                         </div>
                         <h2 className="text-lg font-black italic uppercase tracking-tighter text-[var(--foreground)] leading-none">
                             Flash <span className="text-amber-500">Sale</span>
