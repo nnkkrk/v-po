@@ -69,7 +69,7 @@ export default function AccountTab({ userDetails }: AccountTabProps) {
           My <span className="text-[var(--accent)]">Profile</span>
         </h2>
         <p className="text-xs sm:text-sm text-[var(--muted)] max-w-xl">
-          Manage your account details and password.
+          View your account details and change password.
         </p>
       </motion.div>
 
@@ -174,7 +174,7 @@ export default function AccountTab({ userDetails }: AccountTabProps) {
               </button>
 
               <p className="text-[10px] text-center text-[var(--muted)] font-medium leading-relaxed uppercase tracking-tighter italic">
-                Only you can change your password here. <br /> Your data is sent securely.
+                Only you can change your password here. <br /> It is safe.
               </p>
             </div>
           </div>
@@ -193,7 +193,7 @@ export default function AccountTab({ userDetails }: AccountTabProps) {
         <div className="flex-1">
           <h4 className="text-sm font-bold mb-0.5">Secure Account</h4>
           <p className="text-[10px] text-[var(--muted)] font-medium leading-relaxed">
-            Your account is protected with secure login and encrypted data.
+            Your account is kept safe.
           </p>
         </div>
       </motion.div>

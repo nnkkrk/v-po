@@ -65,10 +65,10 @@ export default function WalletTab({
 
   const handleProceed = async () => {
     if (!amount || Number(amount) < 1) {
-      setAmountError("Minimum amount is ₹1.");
+      setAmountError("Add at least ₹1.");
       return;
     }
-    if (!method) return alert("Please select a payment method.");
+    if (!method) return alert("Choose a way to pay.");
 
     setLoading(true);
     try {
@@ -82,7 +82,7 @@ export default function WalletTab({
       if (data.success) window.location.href = data.paymentUrl;
       else alert(data.message);
     } catch (err) {
-      alert("Could not create order. Please try again.");
+      alert("Could not add money. Try again.");
     } finally {
       setLoading(false);
     }

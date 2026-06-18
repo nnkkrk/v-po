@@ -81,7 +81,7 @@ export default function OrdersTab() {
               My <span className="text-[var(--accent)]">Orders</span>
             </h2>
             <p className="text-[10px] sm:text-xs text-[var(--muted)] max-w-xl mt-0.5">
-              Track your recent transactions and status.
+              See your past orders and their status.
             </p>
           </div>
           <div className="flex shrink-0">
@@ -207,7 +207,7 @@ export default function OrdersTab() {
               <div className="flex-1">
                 <h4 className="text-[9px] font-bold mb-0.5 uppercase text-indigo-400">Status Info</h4>
                 <p className="text-[9px] text-[var(--muted)] leading-relaxed uppercase tracking-tight">
-                  Orders process in 5-15 minutes.
+                  Orders take 5-15 minutes.
                 </p>
               </div>
               <button className="px-3 py-1.5 rounded-lg bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-[8px] font-bold uppercase tracking-wider hover:bg-indigo-500 hover:text-white transition-all">

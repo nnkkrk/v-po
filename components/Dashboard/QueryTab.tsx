@@ -14,7 +14,7 @@ import { FiSend, FiMessageSquare, FiInfo, FiCheckCircle, FiAlertCircle, FiZap } 
 const SUPPORT_CONFIG = {
   header: {
     title: process.env.NEXT_PUBLIC_SUPPORT_TITLE || "Support Center",
-    subtitle: process.env.NEXT_PUBLIC_SUPPORT_SUBTITLE || "Our dedicated support team is here to assist you with any questions or issues.",
+    subtitle: process.env.NEXT_PUBLIC_SUPPORT_SUBTITLE || "Our team is here to help you.",
   },
 
   contacts: {
@@ -108,15 +108,15 @@ export default function QueryTab() {
       const data = await res.json();
 
       if (data.success) {
-        setStatus({ type: "success", message: "Your query has been submitted. We'll get back to you soon!" });
+        setStatus({ type: "success", message: "Message sent. We will reply soon." });
         setQueryType("");
         setUserPhone("");
         setQueryMessage("");
       } else {
-        setStatus({ type: "error", message: data.message || "Something went wrong." });
+        setStatus({ type: "error", message: data.message || "Error happened." });
       }
     } catch {
-      setStatus({ type: "error", message: "Network error. Please try again later." });
+      setStatus({ type: "error", message: "Error. Try again later." });
     } finally {
       setIsSubmitting(false);
     }
@@ -330,7 +330,7 @@ export default function QueryTab() {
               <FiZap /> Tip
             </h4>
             <p className="text-xs font-bold text-[var(--foreground)] leading-relaxed mb-4">
-              Include your Order ID in the description for faster resolution.
+              Add your Order ID to get help faster.
             </p>
           </motion.div>
         </div>

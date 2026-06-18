@@ -138,7 +138,7 @@ export default function TopupComplete() {
                 <p className="text-[10px] md:text-xs font-bold text-muted/60 max-w-[280px] mx-auto uppercase tracking-wide leading-relaxed">
                   {status === "checking" && "Please wait while we confirm your payment."}
                   {status === "success" && "Your order is confirmed and will be delivered soon."}
-                  {status === "failed" && "If money was deducted, your diamonds will be added soon or your amount will be refunded. Please contact support if needed."}
+                  {status === "failed" && "If your money was cut, you will get your diamonds or a refund soon. Contact support if you need help."}
                 </p>
               </div>
 
