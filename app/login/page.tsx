@@ -7,6 +7,7 @@ import logo from "@/public/logo.png";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiShieldKeyholeFill, RiLockPasswordLine } from "react-icons/ri";
 import { FcGoogle } from "react-icons/fc";
+import Link from "next/link";
 
 export default function AuthPage() {
   const [loading, setLoading] = useState(false);
@@ -181,8 +182,16 @@ export default function AuthPage() {
               </div>
             </div>
 
-            <p className="text-[10px] text-[var(--muted)]/40 leading-relaxed font-medium">
-              Your account is safe with us.
+            <p className="text-[10px] text-[var(--muted)]/60 leading-relaxed font-medium px-2">
+              By logging in, you agree to our{" "}
+              <Link href="/terms-and-conditions" className="text-[var(--foreground)] underline hover:text-[var(--accent)] transition-colors">
+                Terms
+              </Link>{" "}
+              and{" "}
+              <Link href="/privacy-policy" className="text-[var(--foreground)] underline hover:text-[var(--accent)] transition-colors">
+                Privacy Policy
+              </Link>
+              .
             </p>
           </div>
         </div>
