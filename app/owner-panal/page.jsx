@@ -60,10 +60,15 @@ export default function AdminPanalPage() {
       const res = await fetch("/api/game/balance");
       const data = await res.json();
       if (data.success) {
-        setBalance(data?.balance?.data?.balance ?? data.balance);
+        let bal = data?.balance?.data?.balance ?? data.balance ?? 0;
+        if (typeof bal === 'object') {
+          bal = bal.message || bal.error || "API Error";
+        }
+        setBalance(bal);
       }
     } catch (err) {
       console.error("Balance fetch failed", err);
+      setBalance("Error");
     }
   };
 
